@@ -81,6 +81,13 @@ h1,h2{text-wrap:balance}
 .contact a{font-size:.8rem;font-weight:700;color:var(--tmu-blue);text-decoration:none;display:inline-flex;align-items:center;gap:7px;background:rgba(0,76,155,.06);padding:6px 12px;border-radius:999px;word-break:break-all}
 .contact a:hover{background:rgba(0,76,155,.11)}
 .contact a:focus-visible{outline:2px solid var(--tmu-blue);outline-offset:2px}
+.block.notes .lab{color:var(--tmu-blue-deep)}
+.note-input{width:100%;min-height:44px;resize:vertical;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-family:inherit;font-size:.95rem;color:var(--ink);background:rgba(255,255,255,.6);line-height:1.5;overflow:hidden}
+.note-input:focus{outline:2px solid var(--tmu-blue);outline-offset:1px;background:#fff}
+.note-input::placeholder{color:var(--settled)}
+.note-hint{font-size:.66rem;color:var(--settled);margin-top:5px;display:flex;align-items:center;gap:6px}
+.note-hint .saved{color:var(--tmu-blue);font-weight:700;opacity:0;transition:opacity .2s}
+.note-hint .saved.show{opacity:1}
 
 /* expander */
 details.more{margin-top:6px}

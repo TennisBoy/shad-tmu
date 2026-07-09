@@ -64,7 +64,7 @@
     if (footer) h += footer;
     return h + '</div>';
   }
-  function card(s) {
+  function card(s, noteKey) {
     var h = '<article class="card" data-kind="' + esc(s.kind) + '">';
     h += '<div class="card-head"><span class="time">' + esc(s.display_time) + '</span>';
     if (s.group) h += '<span class="kind">' + esc(s.group) + '</span>';
@@ -89,6 +89,9 @@
     }
     if (s.agenda) h += block("Likely on the agenda", s.agenda, null, "");
     if (s.buildoff) h += block("Build off it", s.buildoff, null, "");
+    h += '<div class="block notes"><div class="lab">My notes</div>' +
+      '<textarea class="note-input" data-key="' + esc(noteKey) + '" placeholder="Jot what you want to build off — saved on this device."></textarea>' +
+      '<div class="note-hint">Private to this device<span class="saved">· saved</span></div></div>';
     h += '</div></article>';
     return h;
   }
@@ -114,12 +117,13 @@
         '<p class="lede"><span class="count">' + cw + '</span> ' + (n === 1 ? "session" : "sessions") +
         ' today. Read the gist, tap to go deep.</p></header>';
       html += paStrip(day);
-      html += '<div class="sessions">' + day.sessions.map(card).join("") + '</div>';
+      html += '<div class="sessions">' + day.sessions.map(function (s, i) { return card(s, "shadnote:" + TODAY + ":" + i); }).join("") + '</div>';
     }
     html += '<div class="foot">SHAD @ TMU 2026 · focus on today · <a href="timeline.html">see the whole month →</a></div>';
     html += '</section></div>';
     root.innerHTML = html;
     wireWidgets();
+    wireNotes();
   }
 
   /* ---------- TIMELINE view ---------- */
@@ -189,6 +193,24 @@
           var w = WIDGETS[mount.getAttribute("data-widget")];
           if (w) { w(mount); mount.setAttribute("data-built", "1"); }
         }
+      });
+    });
+  }
+
+  /* ---------- per-device notes (localStorage) ---------- */
+  function wireNotes() {
+    var store;
+    try { store = window.localStorage; } catch (e) { store = null; }
+    Array.prototype.forEach.call(root.querySelectorAll(".note-input"), function (ta) {
+      var key = ta.getAttribute("data-key");
+      if (store) { try { var v = store.getItem(key); if (v != null) ta.value = v; } catch (e) {} }
+      var autosize = function () { ta.style.height = "auto"; ta.style.height = Math.max(ta.scrollHeight, 44) + "px"; };
+      autosize();
+      var saved = ta.parentNode.querySelector(".saved"), t;
+      ta.addEventListener("input", function () {
+        autosize();
+        if (store) { try { store.setItem(key, ta.value); } catch (e) {} }
+        if (saved) { saved.classList.add("show"); clearTimeout(t); t = setTimeout(function () { saved.classList.remove("show"); }, 1200); }
       });
     });
   }
