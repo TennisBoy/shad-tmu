@@ -55,12 +55,13 @@
   }
 
   /* ---------- one session card ---------- */
-  function block(lab, gist, full, extraClass, badge) {
+  function block(lab, gist, full, extraClass, badge, footer) {
     var h = '<div class="block ' + (extraClass || "") + '"><div class="lab">' + esc(lab) +
       (badge ? ' <span class="badge">' + esc(badge) + '</span>' : "") + '</div>';
     if (gist) h += '<p class="gist">' + gist + '</p>';
     if (full) h += '<details class="more"><summary>' + (extraClass === "prep" ? "Open the primer" : "Full profile") +
       '</summary><div class="more-body">' + full + '</div></details>';
+    if (footer) h += footer;
     return h + '</div>';
   }
   function card(s) {
@@ -75,7 +76,10 @@
     if (s.speaker && s.location) h += '<div class="role" style="font-style:normal;font-family:var(--sans);font-size:.85rem">' + esc(s.location) + '</div>';
 
     h += '<div class="blocks">';
-    if (s.speaker_gist || s.speaker_full) h += block("The speaker", s.speaker_gist, s.speaker_full, "");
+    if (s.speaker_gist || s.speaker_full || s.email) {
+      var contact = s.email ? '<p class="contact"><a href="mailto:' + esc(s.email) + '">✉ ' + esc(s.email) + '</a></p>' : null;
+      h += block("The speaker", s.speaker_gist, s.speaker_full, "", null, contact);
+    }
     if (s.primer_gist || s.primer_full) {
       var primerLab = s.kind === "social" ? "What it is" : "The primer";
       var badge = s.kind === "social" ? null : "researched for you";

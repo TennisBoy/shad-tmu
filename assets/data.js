@@ -126,7 +126,7 @@ window.SHAD = {
           display_time:"9:00 AM", kind:"workshop",
           title:"We Do, We Undo, We Redo: Costume Making for the Stage",
           speaker:"Prof. Caroline O'Brien", role:"Chair, School of Performance — The Creative School, TMU",
-          location:"DCC 350/352",
+          location:"DCC 350/352", email:"c4obrien@torontomu.ca",
           speaker_gist:"Costume designer who spent nearly 20 years as resident designer at Canada's National Ballet School; now chairs TMU's School of Performance.",
           speaker_full:`<p>O'Brien is an Associate Professor in <b>Costume Design and Making</b> and has chaired TMU's School of Performance since 2019. Before teaching she was resident costume designer and wardrobe supervisor at <b>Canada's National Ballet School</b> for almost two decades.</p><p>She has a long collaboration with <b>Peggy Baker Dance Projects</b>, and curated <em>Sixty Years of Designing the Ballet</em> for the National Ballet of Canada — work that won the Costume Society of America's Richard Martin citation. She also makes large-scale sculpture out of industrial metal textiles, exhibited internationally, and had designs chosen for the inaugural World Stage Design (2005).</p>`,
           primer_gist:"Costume isn't decoration — it builds a character's identity, and unlike fast fashion it's made slowly, by a whole team, to survive a full run of shows.",
