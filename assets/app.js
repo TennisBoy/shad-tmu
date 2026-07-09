@@ -71,7 +71,7 @@
     h += '<h2>' + esc(s.title) + '</h2>';
     if (s.speaker) h += '<div class="speaker">' + esc(s.speaker) + '</div>';
     if (s.role) h += '<div class="role">' + esc(s.role) + '</div>';
-    else if (s.location) h += '<div class="role">' + esc(s.location) + '</div>';
+    else if (s.location && !s.speaker) h += '<div class="role">' + esc(s.location) + '</div>';
     if (s.speaker && s.location) h += '<div class="role" style="font-style:normal;font-family:var(--sans);font-size:.85rem">' + esc(s.location) + '</div>';
 
     h += '<div class="blocks">';
@@ -234,6 +234,51 @@
       }
       pmtEl.addEventListener("input", update);
       yrsEl.addEventListener("input", update);
+      update();
+    },
+
+    "break-even": function (mount) {
+      mount.innerHTML =
+        '<div class="widget"><h4>Find the break-even point</h4>' +
+        '<p class="sub">You only make money once sales cover your fixed costs. Watch where revenue (blue) overtakes total cost (grey).</p>' +
+        '<div id="be-chart"></div>' +
+        '<div class="slider-row"><label for="be-fc">Fixed costs</label><input id="be-fc" type="range" min="0" max="5000" step="100" value="1000"><span class="readout" id="be-fcv">$1,000</span></div>' +
+        '<div class="slider-row"><label for="be-p">Price / unit</label><input id="be-p" type="range" min="1" max="50" step="1" value="12"><span class="readout" id="be-pv">$12</span></div>' +
+        '<div class="slider-row"><label for="be-c">Cost / unit</label><input id="be-c" type="range" min="0" max="40" step="1" value="4"><span class="readout" id="be-cv">$4</span></div>' +
+        '<p style="margin:12px 0 0;font-size:.95rem" id="be-out"></p>' +
+        '<p class="illus-note">Simplified — real costs are messier, but the crossover logic holds.</p></div>';
+      var fcEl = mount.querySelector("#be-fc"), pEl = mount.querySelector("#be-p"), cEl = mount.querySelector("#be-c");
+      var money = function (n) { return "$" + Math.round(n).toLocaleString("en-US"); };
+      function chart(fc, p, c, be) {
+        var x0 = 30, x1 = 230, y0 = 122, y1 = 14;
+        var xmax = isFinite(be) ? Math.max(be * 2, 10) : Math.max((fc / Math.max(p, 1)) * 2, 10);
+        var ymax = Math.max(p * xmax, fc + c * xmax, 1);
+        var sx = function (u) { return (x0 + (x1 - x0) * (u / xmax)).toFixed(1); };
+        var sy = function (v) { return (y0 - (y0 - y1) * (v / ymax)).toFixed(1); };
+        var rev = sx(0) + "," + sy(0) + " " + sx(xmax) + "," + sy(p * xmax);
+        var cost = sx(0) + "," + sy(fc) + " " + sx(xmax) + "," + sy(fc + c * xmax);
+        var dot = (isFinite(be) && be <= xmax) ? '<circle cx="' + sx(be) + '" cy="' + sy(p * be) + '" r="5" fill="#ffdc00" stroke="#003a75" stroke-width="1.5"/>' : "";
+        return '<svg viewBox="0 0 240 140" width="100%" height="130" role="img" aria-label="Revenue vs total cost by units sold">' +
+          '<line x1="' + x0 + '" y1="' + y1 + '" x2="' + x0 + '" y2="' + y0 + '" stroke="rgba(0,76,155,.14)"/>' +
+          '<line x1="' + x0 + '" y1="' + y0 + '" x2="' + x1 + '" y2="' + y0 + '" stroke="rgba(0,76,155,.14)"/>' +
+          '<polyline points="' + cost + '" fill="none" stroke="#9aa4b2" stroke-width="2" stroke-dasharray="3 3"/>' +
+          '<polyline points="' + rev + '" fill="none" stroke="#004c9b" stroke-width="2.6" stroke-linecap="round"/>' + dot +
+          '<text x="130" y="136" text-anchor="middle" font-size="10" fill="#5b6675">units sold →</text></svg>';
+      }
+      function update() {
+        var fc = +fcEl.value, p = +pEl.value, c = +cEl.value, margin = p - c;
+        mount.querySelector("#be-fcv").textContent = money(fc);
+        mount.querySelector("#be-pv").textContent = money(p);
+        mount.querySelector("#be-cv").textContent = money(c);
+        var be = margin > 0 ? fc / margin : Infinity;
+        mount.querySelector("#be-chart").innerHTML = chart(fc, p, c, be);
+        mount.querySelector("#be-out").innerHTML = margin <= 0
+          ? 'At <b>' + money(p) + '</b> price and <b>' + money(c) + '</b> cost you <b style="color:#b23">lose ' + money(c - p) + ' on every unit</b> — there is no break-even. Raise the price or cut the cost.'
+          : 'You break even at <b style="color:#004c9b">' + Math.ceil(be).toLocaleString("en-US") + ' units</b>. Below that you\'re in the red; above it, each extra unit earns <b>' + money(margin) + '</b> profit.';
+      }
+      fcEl.addEventListener("input", update);
+      pEl.addEventListener("input", update);
+      cEl.addEventListener("input", update);
       update();
     }
   };

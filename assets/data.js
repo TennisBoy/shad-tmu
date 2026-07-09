@@ -190,9 +190,12 @@ window.SHAD = {
       },
       sessions: [
         { display_time:"2:00 PM", kind:"talk", title:"Entrepreneurship 101", speaker:"Michael McCarthy", location:"DCC 350/352",
-          primer_gist:"The basics of turning an idea into a venture: find a real customer, offer real value, and start small before you're “ready.”",
-          agenda:"What entrepreneurship actually is → customer + value → how to get started.",
-          buildoff:"Pair this with Thursday's design-thinking session — same loop, business lens. Ask what to do in the first week of a new idea." },
+          speaker_gist:"Leads SHAD's intro to entrepreneurship — turning an idea into something real and paying.",
+          primer_gist:"Entrepreneurship isn't the idea — it's finding a real customer who'll pay, and proving that cheaply before you build the whole thing.",
+          primer_full:`<p>Most first ventures die the same way: building something nobody wanted. The idea is the cheap part — the risky assumption is always <em>“will anyone actually pay for this?”</em></p><p><b>The lean move:</b> talk to real potential customers first, then build the smallest thing that tests your riskiest assumption (a “minimum viable product”), and let their <em>behaviour</em> — not their politeness — tell you if it's real.</p><p><b>Unit economics</b> is the reality check: you have <em>fixed costs</em> (tools, rent) no matter what, plus a <em>cost per unit</em> to make each one. You only make money once enough units sell — at a price above their unit cost — to cover those fixed costs. That crossover is the <b>break-even</b>. Feel it below.</p>`,
+          widget:"break-even",
+          agenda:"What entrepreneurship actually is → find a customer + real value → test cheaply (MVP) → the money side (break-even) → getting started.",
+          buildoff:"Pair this with Thursday's design thinking — same loop, money lens. Ask the sharp one: what's the cheapest experiment that would tell you your SHAD project idea is worth pursuing?" },
         { display_time:"7:00 PM", kind:"social", title:"Waterballoon Fight", location:"The Quad",
           primer_gist:"Exactly what it says. Wear clothes you don't mind soaking, and leave your phone inside." }
       ]
@@ -208,9 +211,10 @@ window.SHAD = {
       },
       sessions: [
         { display_time:"9:00 AM", kind:"social", title:"Headshot Day", location:"SLC 8th Floor",
-          primer_gist:"Free professional headshots. Dress how you'd want to look on LinkedIn or a scholarship application — this photo will outlive SHAD." },
+          primer_gist:"Free professional headshots. Dress like the version of you a scholarship committee or recruiter should meet — this photo will outlive SHAD.",
+          buildoff:"Use it right away: refresh your LinkedIn / scholarship profiles this week, while you look sharp and SHAD is fresh on your story." },
         { display_time:"4:00 PM", kind:"field-trip", title:"AFC Soccer Game", location:"York University — Lions Stadium",
-          primer_gist:"A live soccer outing at York's Lions Stadium. Just enjoy the game with your house." }
+          primer_gist:"A live soccer outing at York's Lions Stadium — a real match with your house. Bring water and something for the sun." }
       ]
     },
 
