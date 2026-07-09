@@ -149,8 +149,11 @@ window.SHAD = {
 
 <p><b>It's bigger than costume.</b> Costume is one instrument in the whole design system — <b>scenic</b> (the world), <b>lighting</b> (focus, time, emotion — the stage's real "lens"), <b>sound</b> (feeling &amp; rhythm), and <b>projection</b> (dynamic media). They interlock: the <em>same</em> costume reads differently under warm vs. cold light, or against a matching vs. clashing set. The "lens through which we see a story" is really all of them coordinated toward one vision — what film calls <em>mise-en-scène</em>, what Wagner called a <em>Gesamtkunstwerk</em> (total work of art).</p>
 
+<p><b>In ballet specifically</b> (O'Brien's world): the costume answers to a <em>moving, athletic body</em> — it must free a jump and a turn, never restrict them, and enhance the <b>line</b> of the dance. And ballet is <b>ephemeral</b>: it exists live, then it's gone — so a third collaborator matters, the <b>photographer</b>, whose framing, timing and light are how the costume and the dance are preserved and seen beyond the theatre. Dancer (the living medium) + designer (movement made wearable) + photographer (the moment kept) — O'Brien has worked all three edges (National Ballet School, Peggy Baker Dance Projects, and curating <em>Sixty Years of Designing the Ballet</em>).</p>
+
 <p><b>Bring these questions:</b></p>
 <ul>
+<li>How does designing for a <em>moving dancer</em> differ from dressing a static character — what can't you do?</li>
 <li>How do you decide what a costume makes us read <em>before</em> any dialogue — and when should it contradict the script?</li>
 <li>How do you build a character's past, present, and arc into a single outfit?</li>
 <li>How much do you design around the lighting and set — has a lighting choice ever flipped how a costume read on stage?</li>
