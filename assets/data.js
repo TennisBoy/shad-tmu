@@ -130,9 +130,34 @@ window.SHAD = {
           speaker_gist:"Costume designer who spent nearly 20 years as resident designer at Canada's National Ballet School; now chairs TMU's School of Performance.",
           speaker_full:`<p>O'Brien is an Associate Professor in <b>Costume Design and Making</b> and has chaired TMU's School of Performance since 2019. Before teaching she was resident costume designer and wardrobe supervisor at <b>Canada's National Ballet School</b> for almost two decades.</p><p>She has a long collaboration with <b>Peggy Baker Dance Projects</b>, and curated <em>Sixty Years of Designing the Ballet</em> for the National Ballet of Canada — work that won the Costume Society of America's Richard Martin citation. She also makes large-scale sculpture out of industrial metal textiles, exhibited internationally, and had designs chosen for the inaugural World Stage Design (2005).</p>`,
           primer_gist:"Costume isn't decoration — it builds a character's identity, and unlike fast fashion it's made slowly, by a whole team, to survive a full run of shows.",
-          primer_full:`<p>On stage, what a character wears tells you who they are before they speak a line — status, era, mood, transformation. A costume designer engineers that on purpose.</p><p><b>Who's in a pro costume shop</b> (she'll walk through these roles): the <em>designer</em> (concept + drawings), the <em>cutter/draper</em> (turns a drawing into a 3-D pattern), the <em>wardrobe supervisor</em> (runs the shop + the show), and <em>stitchers</em> (build it). It's a team craft, not one artist.</p><p><b>Antithesis to fast fashion:</b> costumes are bespoke, repaired, re-used across productions, and built to be worn hard eight shows a week — the opposite of disposable clothing. That's a sustainability argument hiding inside an art form.</p>`,
-          agenda:"How a costume goes concept → design → build; the roles in a professional shop; why costume is the opposite of fast fashion; how clothing reinforces identity.",
-          buildoff:"Ask how she designs identity into a silhouette. And notice: the pro-shop roles map onto your project team — who's your “designer,” who's your “wardrobe supervisor” who actually ships it?"
+          primer_full:`<p><b>Costume is the lens we read character through.</b> What a person wears tells you who they are before they speak — so it's <em>compressed exposition</em>, "show don't tell" in cloth. And nothing on the body is an accident: every detail is a deliberate signal, which is exactly why it's readable (you read most of it subconsciously).</p>
+
+<p><b>What a costume tells you.</b> First it <em>locates</em> the character — <b>when</b> (period, time of day), <b>where</b> (place, culture), and the <b>who-facts</b> (age, gender, class/status, occupation). Get those wrong and belief breaks. Then it <em>reveals</em> them — <b>personality &amp; character</b>, the person inside. The facts are the believable baseline; personality is where design becomes authorship — and the richest storytelling is the <b>tension</b> between the two (dressing above your class, or a costume that fights the script).</p>
+
+<p><b>Five techniques to watch for:</b></p>
+<ul>
+<li><b>Aspiration / identity</b> — <em>Breakfast at Tiffany's</em> (Givenchy): Holly's little black dress is armour — a small-town girl performing a sophisticate.</li>
+<li><b>Colour + historic silhouette for legibility</b> — <em>The Hobbit</em>: colour-coded, period-shaped costumes let you read culture, status, and which character is which, instantly.</li>
+<li><b>Distress = implied history</b> — <em>Indiana Jones</em> (Deborah Nadoolman): a new jacket aged to look worn for a lifetime, smuggling in a backstory you never see.</li>
+<li><b>Ensemble + one accent</b> — a muted coat against a single red lip: your eye is directed to the mouth, restraint outside and heat underneath (the same "one bold thing, everything else quiet" rule as an accent colour in design).</li>
+<li><b>Past / present / future in one outfit</b> — a palette that shifts to track an arc (<em>Breaking Bad</em>: meek beige → Heisenberg black).</li>
+</ul>
+
+<p><b>Two axes: meaning vs. making.</b> Everything above is <em>meaning</em>. The other axis is <b>craft</b> — the virtuosity of the <em>making</em>: the cut, the drape, hand-finishing, dyeing, the "breakdown" (aging by hand), and building something that <em>moves</em> with the actor, survives eight shows a week, and photographs right under lights. You never consciously see it; you feel it as authenticity. This is O'Brien's actual turf — Costume Design <em>and Making</em>, ~20 years building costumes at the National Ballet School. Her title, <em>"We Do, We Undo, We Redo,"</em> <b>is</b> that craft: fit, adjust, perfect, repeat.</p>
+
+<p><b>Who's in a pro costume shop</b> (she'll walk through these roles): the <em>designer</em> (concept + drawings), the <em>cutter/draper</em> (turns a drawing into a 3-D pattern), the <em>wardrobe supervisor</em> (runs the shop + the show), and <em>stitchers</em> (build it). A team craft, not one artist — and a <b>hierarchy</b>: the more senior the role, the more creative input (and respect) you carry, from stitchers who execute up to the designer who decides. It's also the opposite of <b>fast fashion</b>: bespoke, repaired, re-used, built to last — a sustainability argument hiding inside an art form.</p>
+
+<p><b>It's bigger than costume.</b> Costume is one instrument in the whole design system — <b>scenic</b> (the world), <b>lighting</b> (focus, time, emotion — the stage's real "lens"), <b>sound</b> (feeling &amp; rhythm), and <b>projection</b> (dynamic media). They interlock: the <em>same</em> costume reads differently under warm vs. cold light, or against a matching vs. clashing set. The "lens through which we see a story" is really all of them coordinated toward one vision — what film calls <em>mise-en-scène</em>, what Wagner called a <em>Gesamtkunstwerk</em> (total work of art).</p>
+
+<p><b>Bring these questions:</b></p>
+<ul>
+<li>How do you decide what a costume makes us read <em>before</em> any dialogue — and when should it contradict the script?</li>
+<li>How do you build a character's past, present, and arc into a single outfit?</li>
+<li>How much do you design around the lighting and set — has a lighting choice ever flipped how a costume read on stage?</li>
+<li>What detail are you proudest of that the audience will never consciously see?</li>
+</ul>`,
+          agenda:"How a costume goes concept → design → build; what it makes us read (period, place, status, character); the pro-shop roles; why it's the opposite of fast fashion.",
+          buildoff:"She's a maker, not just a designer — push past “what does it mean” into “how is it built.” Bring one real question about the craft (a few are in the primer)."
         },
         {
           display_time:"10:30 AM", kind:"talk",
