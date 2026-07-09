@@ -1,0 +1,237 @@
+/* SHAD @ TMU 2026 — the whole dataset. One copy; both pages read it.
+   Keyed by ISO date. Each day = PA duty roster + sessions.
+   Authoring doctrine lives in ../CLAUDE.md. Meals/breaks/sleep/travel are excluded. */
+
+window.SHAD = {
+  tz: "America/Toronto",
+  ga_id: "",                       // ← paste GA4 id "G-XXXXXXXXXX" to turn analytics on
+  program: { start: "2026-07-06", end: "2026-07-12" },  // Week 1 (more weeks appended as they arrive)
+
+  // reusable primers for the rotating group workshops (same content, different group/time)
+  _reuse: {},
+
+  days: {
+
+    /* ===================== MONDAY — arrival & orientation ===================== */
+    "2026-07-06": {
+      week: 1,
+      headline: "Day one — you just landed.",
+      pa_duty: {
+        room_checks: [ {floor:"6",pa:"Raquel"}, {floor:"7",pa:"Jacob"}, {floor:"8",pa:"Fadumo"} ],
+        off: []
+      },
+      sessions: [
+        { display_time:"8:30 AM", kind:"social", title:"Meet your teams + Welcome", location:"DCC",
+          primer_gist:"Your first look at your house group and the month ahead — names, faces, the schedule." },
+        { display_time:"10:00 AM", kind:"workshop", title:"Improv Icebreaker", speaker:"Bianca Stagliano", location:"DCC",
+          speaker_gist:"Improv facilitator running your first real icebreaker.",
+          primer_gist:"Improv runs on one rule — “yes, and”: accept what someone offers, then add to it. It's the lowest-stakes way to start meeting 130 strangers.",
+          agenda:"Quick games, lots of laughing, meeting people fast.",
+          buildoff:"“Yes, and” is also how good brainstorming works — you'll reuse it in your project all month." },
+        { display_time:"1:30 PM", kind:"field-trip", title:"TMU Campus Tour & Orientation", speaker:"TMU Student Recruitment", location:"DCC 350/352",
+          primer_gist:"Learn the buildings you'll live in for a month — DCC, SLC, KHE, MAC, Pitman. Where things are stops being a daily puzzle.",
+          agenda:"Walking tour of campus + how SHAD@TMU logistics work." },
+        { display_time:"4:00 PM", kind:"talk", title:"Fears about SHAD", speaker:"Zoe (Rec Director)", location:"DCC 350/352",
+          primer_gist:"Everyone arrives nervous — about the work, the people, being away. Naming a fear out loud takes most of its power away.",
+          buildoff:"Say the thing you're actually worried about. Odds are 100 other people are worried about the same one." },
+        { display_time:"7:00 PM", kind:"social", title:"Astrodome — Astronomy in Action", location:"SLC Amphitheatre",
+          primer_gist:"A guided planetarium-style show — Solar System, stars, galaxies, space exploration. Nothing to prep; just look up." }
+      ]
+    },
+
+    /* ===================== TUESDAY — the rotation begins ===================== */
+    "2026-07-07": {
+      week: 1,
+      headline: "The workshops kick in.",
+      pa_duty: {
+        room_checks: [ {floor:"6",pa:"Fatimah"}, {floor:"7",pa:"Niksha"}, {floor:"8",pa:"Jenna"} ],
+        off: [ {pa:"Niksha", when:"8–9 PM"} ]
+      },
+      sessions: [
+        { display_time:"9:00 AM", kind:"workshop", title:"STEM with Purpose: Building Assistive Technology Together", group:"Groups 1 & 2", location:"SLC 8th Floor",
+          primer_gist:"Assistive tech works best when it's designed *with* the people who'll use it, not just for them. Expect disability-inclusive, human-first engineering.",
+          agenda:"What assistive technology is, who it serves, and a hands-on build.",
+          buildoff:"The “design with, not for” idea is gold for your project — the best solutions come from the user, not the whiteboard." },
+        { display_time:"9:00 AM", kind:"workshop", title:"Texas Instruments", group:"Group 4", location:"DCC 103/104",
+          primer_gist:"Hands-on with TI hardware — embedded electronics and signal/data tools. Real chips, real measurements.",
+          agenda:"Guided build/experiment with TI kit.",
+          buildoff:"If your project has any electronics, this is where you learn what's actually feasible to prototype." },
+        { display_time:"10:00 AM", kind:"workshop", title:"Physics Lab", group:"Group 3", location:"KHE 235B",
+          primer_gist:"A real university physics lab — the point is measurement and uncertainty, not memorized formulas. Every reading has error; good science says how much.",
+          agenda:"A guided experiment with real apparatus.",
+          buildoff:"Notice how they handle uncertainty — that rigor is exactly what your IB Physics labs are graded on." },
+        { display_time:"2:00 PM", kind:"workshop", title:"Texas Instruments", group:"Group 1", location:"DCC 103/104",
+          primer_gist:"Hands-on with TI hardware — embedded electronics and signal/data tools.",
+          agenda:"Guided build/experiment with TI kit." },
+        { display_time:"2:00 PM", kind:"workshop", title:"Physics Lab", group:"Group 2", location:"KHE 235B",
+          primer_gist:"A real university physics lab — measurement and uncertainty over memorized formulas.",
+          agenda:"A guided experiment with real apparatus." },
+        { display_time:"2:00 PM", kind:"workshop", title:"STEM with Purpose: Building Assistive Technology Together", group:"Groups 3 & 4", location:"SLC 8th Floor",
+          primer_gist:"Assistive tech designed *with* its users — disability-inclusive, human-first engineering.",
+          agenda:"What assistive technology is, who it serves, and a hands-on build." },
+        { display_time:"5:00 PM", kind:"talk", title:"Decoding Biology with AI", speaker:"Richard Dong", role:"PhD Student, Medical Biophysics — U of T & Vector Institute", location:"DCC 103/104",
+          speaker_gist:"PhD student at U of T's Medical Biophysics and the Vector Institute — Canada's top AI research hub — working on AI applied to biology.",
+          primer_gist:"“AI” here means systems that *learn* patterns from data instead of following rules a human wrote. You'll train a real image model in minutes and watch it get fooled.",
+          primer_full:`<p><b>Traditional computing:</b> a human writes exact rules (“if pixel &gt; 200, it's bright”). <b>Machine learning:</b> you show the computer thousands of labelled examples and it <em>learns</em> the rule itself — useful when the rule is too fuzzy to write, like “this cell looks cancerous.”</p><p>You'll use <b>Teachable Machine</b> to train a vision model from your own webcam images, then probe where it breaks — that's the real lesson. AI is <em>confidently wrong</em> when it meets something unlike its training data, it inherits bias from that data, and it's hungry for lots of examples.</p><p>In biology this is huge: predicting protein shapes, reading medical scans, spotting patterns across millions of cells no human could scan.</p>`,
+          agenda:"How AI differs from normal code → build a vision model in Teachable Machine → where it fails → uses in biology.",
+          buildoff:"Try to break your own model on purpose — the failure tells you more than the success. Ask Richard what the Vector Institute actually works on." },
+        { display_time:"8:00 PM", kind:"social", title:"Photo Scavenger Hunt", location:"DCC 350/352",
+          primer_gist:"House groups race to complete photo challenges around campus. Great way to learn the map and your teammates at once." }
+      ]
+    },
+
+    /* ===================== WEDNESDAY — rotation continues ===================== */
+    "2026-07-08": {
+      week: 1,
+      headline: "Halfway through the first week.",
+      pa_duty: {
+        room_checks: [ {floor:"6",pa:"Faiqa"}, {floor:"7",pa:"Sirna"}, {floor:"8",pa:"Rishaan"} ],
+        off: [ {pa:"Joella", when:"12–1:30"} ]
+      },
+      sessions: [
+        { display_time:"9:00 AM", kind:"workshop", title:"Texas Instruments", group:"Group 3", location:"DCC 350/352",
+          primer_gist:"Hands-on with TI hardware — embedded electronics and signal/data tools.",
+          agenda:"Guided build/experiment with TI kit." },
+        { display_time:"9:00 AM", kind:"workshop", title:"Data Dunkers", group:"Groups 1 & 2", location:"MAC",
+          primer_gist:"Data science with a basketball flavour — you analyze real sports data (expect Python/pandas-style tools) and let the numbers tell a story.",
+          agenda:"Load real data → find a pattern → visualize it.",
+          buildoff:"Every claim you'll make in an IA or EE needs data behind it — this is a friendly on-ramp to “show me the numbers.”" },
+        { display_time:"10:00 AM", kind:"workshop", title:"Physics Lab", group:"Group 4", location:"KHE 235B",
+          primer_gist:"A real university physics lab — measurement and uncertainty over memorized formulas.",
+          agenda:"A guided experiment with real apparatus." },
+        { display_time:"2:00 PM", kind:"workshop", title:"Data Dunkers", group:"Groups 3 & 4", location:"MAC (upstairs at 4:00)",
+          primer_gist:"Sports data science — analyze real data and let the numbers tell a story.",
+          agenda:"Load real data → find a pattern → visualize it." },
+        { display_time:"2:00 PM", kind:"workshop", title:"Physics Lab", group:"Group 1", location:"KHE 235B",
+          primer_gist:"A real university physics lab — measurement and uncertainty over memorized formulas.",
+          agenda:"A guided experiment with real apparatus." },
+        { display_time:"2:00 PM", kind:"workshop", title:"Texas Instruments", group:"Group 2", location:"DCC 350/352",
+          primer_gist:"Hands-on with TI hardware — embedded electronics and signal/data tools.",
+          agenda:"Guided build/experiment with TI kit." },
+        { display_time:"5:30 PM", kind:"social", title:"PA Workshop: Jeopardy", speaker:"Jenna Bindra", location:"DCC 350/352",
+          primer_gist:"A PA-run Jeopardy night — low stakes, high fun. Bring your random knowledge." },
+        { display_time:"8:00 PM", kind:"talk", title:"Hustle 101", speaker:"Haseeb", location:"DCC 350/352",
+          primer_gist:"“Hustle” = making things happen with what you already have, before you feel ready. Expect stories about initiative and side projects.",
+          buildoff:"Ask for the smallest first step he took — the honest answer is usually embarrassingly small, which is the point." }
+      ]
+    },
+
+    /* ===================== THURSDAY (today) — the showpiece day ===================== */
+    "2026-07-09": {
+      week: 1,
+      headline: "Costumes, capital, design & open-heart surgery — in one day.",
+      pa_duty: {
+        room_checks: [ {floor:"6",pa:"Arianna"}, {floor:"7",pa:"Daniel"}, {floor:"8",pa:"Ayesha"} ],
+        off: [ {pa:"Fadumo", when:"8 AM–12 PM"} ]
+      },
+      sessions: [
+        {
+          display_time:"9:00 AM", kind:"workshop",
+          title:"We Do, We Undo, We Redo: Costume Making for the Stage",
+          speaker:"Prof. Caroline O'Brien", role:"Chair, School of Performance — The Creative School, TMU",
+          location:"DCC 350/352",
+          speaker_gist:"Costume designer who spent nearly 20 years as resident designer at Canada's National Ballet School; now chairs TMU's School of Performance.",
+          speaker_full:`<p>O'Brien is an Associate Professor in <b>Costume Design and Making</b> and has chaired TMU's School of Performance since 2019. Before teaching she was resident costume designer and wardrobe supervisor at <b>Canada's National Ballet School</b> for almost two decades.</p><p>She has a long collaboration with <b>Peggy Baker Dance Projects</b>, and curated <em>Sixty Years of Designing the Ballet</em> for the National Ballet of Canada — work that won the Costume Society of America's Richard Martin citation. She also makes large-scale sculpture out of industrial metal textiles, exhibited internationally, and had designs chosen for the inaugural World Stage Design (2005).</p>`,
+          primer_gist:"Costume isn't decoration — it builds a character's identity, and unlike fast fashion it's made slowly, by a whole team, to survive a full run of shows.",
+          primer_full:`<p>On stage, what a character wears tells you who they are before they speak a line — status, era, mood, transformation. A costume designer engineers that on purpose.</p><p><b>Who's in a pro costume shop</b> (she'll walk through these roles): the <em>designer</em> (concept + drawings), the <em>cutter/draper</em> (turns a drawing into a 3-D pattern), the <em>wardrobe supervisor</em> (runs the shop + the show), and <em>stitchers</em> (build it). It's a team craft, not one artist.</p><p><b>Antithesis to fast fashion:</b> costumes are bespoke, repaired, re-used across productions, and built to be worn hard eight shows a week — the opposite of disposable clothing. That's a sustainability argument hiding inside an art form.</p>`,
+          agenda:"How a costume goes concept → design → build; the roles in a professional shop; why costume is the opposite of fast fashion; how clothing reinforces identity.",
+          buildoff:"Ask how she designs identity into a silhouette. And notice: the pro-shop roles map onto your project team — who's your “designer,” who's your “wardrobe supervisor” who actually ships it?"
+        },
+        {
+          display_time:"10:30 AM", kind:"talk",
+          title:"Investing in the 21st Century: Getting Started",
+          speaker:"Prof. Alan Kaplan", role:"Finance — Ted Rogers School of Management, TMU",
+          location:"DCC 350/352",
+          speaker_gist:"Finance professor at Ted Rogers who helps guide TMU's student-run fund — students manage a real portfolio worth over $900,000.",
+          speaker_full:`<p>Kaplan teaches in TMU's School of Accounting &amp; Finance; his areas include ethics in finance, finance pedagogy, and sports finance.</p><p>Since Fall 2020 he's helped guide the <b>Student Managed Investment Fund (SMIF)</b> — students in the Applied Investment Management courses (FIN 650/750) run a real portfolio seeded with <b>$900,000</b> under a genuine investment policy. This talk is the on-ramp: what those students do, and how you could get involved at TMU later.</p>`,
+          primer_gist:"The most powerful idea in investing is compounding: your returns earn their own returns. Starting early beats starting big — try the slider below and see.",
+          primer_full:`<p><b>Compounding</b> is the whole game. Put money in, it earns a return; next year that return <em>also</em> earns a return, and so on. Over decades the curve bends upward hard — which is why a 16-year-old's biggest advantage isn't money, it's <em>time</em>.</p><p><b>Two ways in:</b> pick individual stocks (hard, risky, what the SMIF students practise), or buy a broad <em>index fund</em> that owns a slice of the whole market (cheap, boring, historically effective). His talk covers what a real managed portfolio looks like and how you'd start.</p>`,
+          widget:"compound-growth",
+          agenda:"What the SMIF students actually do → what a real $900K portfolio looks like → how compounding works → how to start (and get involved at TMU later).",
+          buildoff:"Play with the compounding slider before the talk so his numbers click. Then ask the real question: what should someone with $500 and no income do <em>today</em>?"
+        },
+        {
+          display_time:"1:30 PM", kind:"workshop",
+          title:"Design Thinking",
+          speaker:"Prof. Steven Gedeon", role:"Director, TMU Entrepreneur Institute — Ted Rogers School of Management",
+          location:"DCC 350/352",
+          speaker_gist:"Runs TMU's Entrepreneur Institute; has founded a dozen+ organizations and his student teams have won 35+ entrepreneurship championships.",
+          speaker_full:`<p>Gedeon is an Associate Professor and Director of the <b>TMU Entrepreneur Institute</b>, one of the world's larger student experiential-entrepreneurship programs. He's founded or led 12+ private, public, VC and non-profit organizations and published 100+ articles and patents.</p><p>He teaches TMU's <em>Design Thinking</em> course; his student teams have taken 35+ regional and national championships, many in social entrepreneurship.</p>`,
+          primer_gist:"Design thinking means starting with the human, not the product: empathize → define → ideate → prototype → test — looping fast instead of planning perfectly.",
+          primer_full:`<p>The five moves, in order, but you loop them constantly:</p><p><b>1. Empathize</b> — watch and talk to a real user; get their actual problem, not your guess. <b>2. Define</b> — write the problem as one sharp sentence. <b>3. Ideate</b> — generate many bad ideas fast (quantity first). <b>4. Prototype</b> — build the cheapest rough version. <b>5. Test</b> — put it in front of the user, learn, go back a step.</p><p>The mantra: <em>“fall in love with the problem, not the solution.”</em> Most teams skip empathizing and build something nobody needs.</p>`,
+          agenda:"The five-stage loop → empathizing with a real user → rapid ideation → why a rough prototype beats a polished plan.",
+          buildoff:"This is literally the method behind your SHAD project. Ask how to pick the *right* problem — that's where teams go wrong. Bring your group's one-sentence problem statement."
+        },
+        {
+          display_time:"6:30 PM", kind:"lecture",
+          title:"Cardiac Surgery — Lecture & Q&A",
+          speaker:"Dr. Bobby Yanagawa", role:"Division Head, Cardiac Surgery, St. Michael's Hospital · MD, PhD, FRCSC",
+          location:"DCC 350/352",
+          speaker_gist:"Head of cardiac surgery at St. Michael's Hospital and U of T's cardiac surgery program director — 90+ research papers on bypass and valve surgery.",
+          speaker_full:`<p>Yanagawa did his BSc and PhD at UBC, then his MD and cardiac-surgery residency at the University of Toronto. He now leads the <b>Division of Cardiac Surgery at St. Michael's Hospital</b> and directs U of T's cardiac surgery program.</p><p>His clinical and research focus is <b>surgical revascularization</b> (bypass) and <b>valvular heart disease</b>. He's published 90+ peer-reviewed papers (including in <em>Nature Communications</em>, <em>Nature Medicine</em>, and <em>Circulation</em>) and directs the Canadian Society of Cardiac Surgeons' Equity-Diversity-Inclusion Taskforce and its National Residency Bootcamp.</p>`,
+          primer_gist:"Two ideas cover most heart surgery: revascularization (rerouting blood around a blocked artery — a bypass) and valve repair (fixing the heart's one-way doors).",
+          primer_full:`<p><b>The plumbing:</b> your heart muscle is fed by <em>coronary arteries</em>. If one clogs, that muscle starves — a heart attack. A <b>bypass (CABG)</b> grafts a spare blood vessel around the blockage, like a detour around a closed road.</p><p><b>The valves:</b> the heart has four one-way doors. They can leak (<em>regurgitation</em>) or stiffen and narrow (<em>stenosis</em>). Surgeons repair or replace them.</p><p><b>“Open-heart”</b> usually means the heart is stopped and a <em>heart-lung machine</em> does its job while the surgeon works — then it's restarted. Let that sink in before you walk in.</p>`,
+          agenda:"What a cardiac surgeon actually does day to day → bypass vs. valve surgery → a real case → open Q&A.",
+          buildoff:"It's a Q&A — the value is your question. Come with one real one: how does he decide repair vs. replace a valve? What's the hardest judgment call mid-operation?"
+        },
+        {
+          display_time:"8:00 PM", kind:"social",
+          title:"Team Building", location:"DCC 350/352",
+          primer_gist:"House groups compete in challenges built for communication and bonding. No prep — just show up ready to be a good teammate.",
+          buildoff:"Low-stakes reps at the exact collaboration your project needs. Watch who naturally organizes and who defuses tension — useful intel for crunch week."
+        }
+      ]
+    },
+
+    /* ===================== FRIDAY ===================== */
+    "2026-07-10": {
+      week: 1,
+      headline: "Ideas into ventures — and a waterballoon fight.",
+      pa_duty: {
+        room_checks: [ {floor:"6",pa:"Joseph"}, {floor:"7",pa:"Joella"}, {floor:"8",pa:"Raquel"} ],
+        off: [ {pa:"Jacob", when:"all day"}, {pa:"Sirna", when:"all day"}, {pa:"Ayesha", when:"all day"} ]
+      },
+      sessions: [
+        { display_time:"2:00 PM", kind:"talk", title:"Entrepreneurship 101", speaker:"Michael McCarthy", location:"DCC 350/352",
+          primer_gist:"The basics of turning an idea into a venture: find a real customer, offer real value, and start small before you're “ready.”",
+          agenda:"What entrepreneurship actually is → customer + value → how to get started.",
+          buildoff:"Pair this with Thursday's design-thinking session — same loop, business lens. Ask what to do in the first week of a new idea." },
+        { display_time:"7:00 PM", kind:"social", title:"Waterballoon Fight", location:"The Quad",
+          primer_gist:"Exactly what it says. Wear clothes you don't mind soaking, and leave your phone inside." }
+      ]
+    },
+
+    /* ===================== SATURDAY ===================== */
+    "2026-07-11": {
+      week: 1,
+      headline: "Camera-ready, then a soccer game.",
+      pa_duty: {
+        room_checks: [ {floor:"6",pa:"Jacob"}, {floor:"7",pa:"Fadumo"}, {floor:"8",pa:"Fatimah"} ],
+        off: [ {pa:"Faiqa", when:"all day"}, {pa:"Niksha", when:"all day"} ]
+      },
+      sessions: [
+        { display_time:"9:00 AM", kind:"social", title:"Headshot Day", location:"SLC 8th Floor",
+          primer_gist:"Free professional headshots. Dress how you'd want to look on LinkedIn or a scholarship application — this photo will outlive SHAD." },
+        { display_time:"4:00 PM", kind:"field-trip", title:"AFC Soccer Game", location:"York University — Lions Stadium",
+          primer_gist:"A live soccer outing at York's Lions Stadium. Just enjoy the game with your house." }
+      ]
+    },
+
+    /* ===================== SUNDAY ===================== */
+    "2026-07-12": {
+      week: 1,
+      headline: "Off campus — city & retreat.",
+      pa_duty: {
+        room_checks: [],
+        off: []
+      },
+      sessions: [
+        { display_time:"11:30 AM", kind:"field-trip", title:"Kensington Market", group:"Group 1", location:"Downtown Toronto",
+          primer_gist:"A wander through Kensington Market — Toronto's most eclectic neighbourhood: vintage shops, global food, murals. Bring a little cash." },
+        { display_time:"2:30 PM", kind:"field-trip", title:"Cedar Glen", group:"Group 2", location:"Cedar Glen (north of the city)",
+          primer_gist:"An off-site trip to Cedar Glen — outdoor/retreat space for a change of pace from campus." }
+      ]
+    }
+
+  }
+};
