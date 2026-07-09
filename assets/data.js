@@ -7,9 +7,6 @@ window.SHAD = {
   ga_id: "",                       // ← paste GA4 id "G-XXXXXXXXXX" to turn analytics on
   program: { start: "2026-07-06", end: "2026-07-12" },  // Week 1 (more weeks appended as they arrive)
 
-  // reusable primers for the rotating group workshops (same content, different group/time)
-  _reuse: {},
-
   days: {
 
     /* ===================== MONDAY — arrival & orientation ===================== */
