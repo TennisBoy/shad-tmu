@@ -151,6 +151,8 @@ window.SHAD = {
 
 <p><b>In ballet specifically</b> (O'Brien's world): the costume answers to a <em>moving, athletic body</em> — it must free a jump and a turn, never restrict them, and enhance the <b>line</b> of the dance. And ballet is <b>ephemeral</b>: it exists live, then it's gone — so a third collaborator matters, the <b>photographer</b>, whose framing, timing and light are how the costume and the dance are preserved and seen beyond the theatre. Dancer (the living medium) + designer (movement made wearable) + photographer (the moment kept) — O'Brien has worked all three edges (National Ballet School, Peggy Baker Dance Projects, and curating <em>Sixty Years of Designing the Ballet</em>).</p>
 
+<p><b>Sketch → living archive.</b> A design is not the garment: the shop <em>interprets</em> a designer's drawing into three dimensions (a designer like <em>Santo Loquasto</em> hands over designs that makers realise), and that interpretation is its own creative act. Productions keep a <b>"show bible"</b> recording a costume down to its materials and construction — the Sugar Plum Fairy tutu, say — so it can be rebuilt exactly, season after season. And because these are built to last, the <em>actual cloth</em> is often still danced in decades later: ballet costume is a living archive, the opposite of disposable.</p>
+
 <p><b>Bring these questions:</b></p>
 <ul>
 <li>How does designing for a <em>moving dancer</em> differ from dressing a static character — what can't you do?</li>
