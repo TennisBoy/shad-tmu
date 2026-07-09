@@ -1,5 +1,7 @@
 # SHAD @ TMU — schedule site
 
+**🔗 Live:** https://brave-water-01f43ed0f.7.azurestaticapps.net/index.html
+
 A **focus-on-today** schedule for SHAD @ Toronto Metropolitan University (July 2026). The home page
 shows only **today** — every session as a pre-loaded briefing (who's speaking, the real background,
 what it'll cover, how to build off it). Past and future live on the **Timeline**.
