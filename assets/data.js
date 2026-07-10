@@ -253,8 +253,16 @@ window.SHAD = {
 <li><b>Divide and conquer</b> — break the big scary thing into pieces someone can actually own.</li>
 <li><b>Focus, then pivot</b> — commit hard, but change direction fast the moment the evidence says so.</li>
 </ul>
-<p>His bottom line, said twice for emphasis: <b>focus on the product, and prioritize ruthlessly.</b> Every tool above just protects the time to build the one thing that actually matters.</p>`,
-          agenda:"Attention to detail as a moat (the Van Halen brown-M&amp;M test) → play offense as a venture → ideation: purpose, value proposition, competitive edge → your “right to win” and how you differentiate → test cheaply (MVP) and the money side (break-even) → the funding staircase (3 Fs → angels → VC → bridge → revenue) → each stage's core job (early adopter → sales at scale) → the sales cycle → prioritizing what will “kill you next.”",
+<p>His bottom line, said twice for emphasis: <b>focus on the product, and prioritize ruthlessly.</b> Every tool above just protects the time to build the one thing that actually matters.</p>
+<p><b>And how does everyone finally get paid?</b> All that equity is just paper until a “liquidity event” — an <b>exit</b> — turns it into cash. Four ways out:</p>
+<ul>
+<li><b>Strategic sale</b> — a bigger company acquires you, and pays up because you make <em>them</em> better: you lift their efficiency, or they push your product through global sales channels and distribution you could never build yourself. The classic startup happy ending.</li>
+<li><b>IPO (Initial Public Offering)</b> — you list on a stock exchange and sell shares to the public. Founders and early investors can finally sell their stake, and employees holding equity through an <b>ESOP</b> (Employee Stock Ownership Plan) share in the payday too.</li>
+<li><b>MBO / LBO</b> — a <b>Management Buy-Out</b> (the people running it buy it) or a <b>Leveraged Buy-Out</b> (buyers fund the purchase mostly with borrowed money, secured against the company itself).</li>
+<li><b>Bankruptcy</b> — the exit nobody wants: the venture can't cover its debts and winds down, assets sold to repay creditors, with shareholders last in line and often left with nothing.</li>
+</ul>
+<p>Every investor back on that funding staircase is betting you reach one of the first three before the fourth.</p>`,
+          agenda:"Attention to detail as a moat (the Van Halen brown-M&amp;M test) → play offense as a venture → ideation: purpose, value proposition, competitive edge → your “right to win” and how you differentiate → test cheaply (MVP) and the money side (break-even) → the funding staircase (3 Fs → angels → VC → bridge → revenue) → each stage's core job (early adopter → sales at scale) → the sales cycle → prioritizing what will “kill you next” → and how everyone finally gets paid: the exit (strategic sale / IPO / MBO-LBO / bankruptcy).",
           buildoff:"Pair this with Thursday's design thinking — same loop, money lens. He's a real investor who's run three software companies, so ask the sharp one: what's the cheapest experiment that would prove your SHAD project idea is worth pursuing?" },
         { display_time:"7:00 PM", kind:"social", title:"Waterballoon Fight", location:"The Quad",
           primer_gist:"Exactly what it says. Wear clothes you don't mind soaking, and leave your phone inside." }
