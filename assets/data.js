@@ -274,7 +274,17 @@ window.SHAD = {
 <li><b>MBO / LBO</b> — a <b>Management Buy-Out</b> (the people running it buy it) or a <b>Leveraged Buy-Out</b> (buyers fund the purchase mostly with borrowed money, secured against the company itself).</li>
 <li><b>Bankruptcy</b> — the exit nobody wants: the venture can't cover its debts and winds down, assets sold to repay creditors, with shareholders last in line and often left with nothing.</li>
 </ul>
-<p>Every investor back on that funding staircase is betting you reach one of the first three before the fourth.</p>`,
+<p>Every investor back on that funding staircase is betting you reach one of the first three before the fourth.</p>
+<p><b>Sharp questions to ask him about the early stage (right after seed):</b></p>
+<ul>
+<li>How do you find your first early adopters — and tell a real one (who'll pay and give hard feedback) from someone just being polite?</li>
+<li>Should the founder personally do <em>every</em> sale early on? When do you hire the first real salesperson?</li>
+<li>How do you price your first customers with no track record — is giving it cheap or free a mistake?</li>
+<li>Right after seed, how do you choose between raising angel money and bootstrapping on your first revenue?</li>
+<li>How do you know you're ready to leave the early stage and scale — and how do founders scale too early and kill themselves?</li>
+<li>How do you tell “this just needs more time” from “this needs a pivot”?</li>
+<li>What's the thing most likely to “kill you next” right after seed that founders keep ignoring?</li>
+</ul>`,
           agenda:"Attention to detail as a moat (the Van Halen brown-M&amp;M test) → play offense as a venture → ideation: purpose, value proposition, competitive edge → your “right to win” and how you differentiate → test cheaply (MVP) and the money side (break-even) → the funding staircase (3 Fs → angels → VC → bridge → revenue) → each stage's core job (early adopter → sales at scale) → the sales cycle → B2B vs. B2C marketing → prioritizing what will “kill you next” → valuing the company (market cap, comparables, P/E multiples) → and how everyone finally gets paid: the exit (strategic sale / IPO / MBO-LBO / bankruptcy).",
           buildoff:"Pair this with Thursday's design thinking — same loop, money lens. He's a real investor who's run three software companies, so ask the sharp one: what's the cheapest experiment that would prove your SHAD project idea is worth pursuing?" },
         { display_time:"7:00 PM", kind:"social", title:"Waterballoon Fight", location:"The Quad",
