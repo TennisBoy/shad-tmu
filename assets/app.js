@@ -219,6 +219,70 @@
 
   /* ---------- widget registry ---------- */
   var WIDGETS = {
+    "pe-valuation": function (mount) {
+      mount.innerHTML =
+        '<div class="widget"><h4>How the multiple sets the price</h4>' +
+        '<p class="sub">Valuation = annual profit × the P/E multiple. Same profit, a different multiple, a wildly different price — drag both and watch the gold dot.</p>' +
+        '<div id="pe-chart"></div>' +
+        '<div class="slider-row"><label for="pe-e">Annual profit</label><input id="pe-e" type="range" min="50000" max="2000000" step="50000" value="500000"><span class="readout" id="pe-ev">$500k</span></div>' +
+        '<div class="slider-row"><label for="pe-m">P/E multiple</label><input id="pe-m" type="range" min="1" max="40" step="1" value="12"><span class="readout" id="pe-mv">12×</span></div>' +
+        '<p style="margin:12px 0 0;font-size:.95rem" id="pe-out"></p>' +
+        '<p class="illus-note">Illustrative — real multiples depend on growth, risk and sector.</p></div>';
+      var eEl = mount.querySelector("#pe-e"), mEl = mount.querySelector("#pe-m");
+      var money = function (n) { n = Math.round(n); var a = Math.abs(n); if (a >= 1e6) return "$" + (n / 1e6).toFixed(1) + "M"; if (a >= 1e3) return "$" + Math.round(n / 1e3) + "k"; return "$" + n; };
+      var PEMAX = 40;
+      function chart(profit, mult) {
+        var x0 = 30, x1 = 230, y0 = 122, y1 = 14;
+        var valMax = Math.max(profit * PEMAX, 1);
+        var sx = function (pe) { return (x0 + (x1 - x0) * (pe / PEMAX)).toFixed(1); };
+        var sy = function (v) { return (y0 - (y0 - y1) * (v / valMax)).toFixed(1); };
+        var line = sx(0) + "," + sy(0) + " " + sx(PEMAX) + "," + sy(profit * PEMAX);
+        return '<svg viewBox="0 0 240 140" width="100%" height="130" role="img" aria-label="Valuation rises with the P/E multiple">' +
+          '<line x1="' + x0 + '" y1="' + y1 + '" x2="' + x0 + '" y2="' + y0 + '" stroke="rgba(0,76,155,.14)"/>' +
+          '<line x1="' + x0 + '" y1="' + y0 + '" x2="' + x1 + '" y2="' + y0 + '" stroke="rgba(0,76,155,.14)"/>' +
+          '<polyline points="' + line + '" fill="none" stroke="#004c9b" stroke-width="2.6" stroke-linecap="round"/>' +
+          '<line x1="' + sx(mult) + '" y1="' + sy(profit * mult) + '" x2="' + sx(mult) + '" y2="' + y0 + '" stroke="#9aa4b2" stroke-width="1" stroke-dasharray="3 3"/>' +
+          '<circle cx="' + sx(mult) + '" cy="' + sy(profit * mult) + '" r="5" fill="#ffdc00" stroke="#003a75" stroke-width="1.5"/>' +
+          '<text x="130" y="136" text-anchor="middle" font-size="10" fill="#5b6675">P/E multiple →</text></svg>';
+      }
+      function update() {
+        var profit = +eEl.value, mult = +mEl.value, val = profit * mult;
+        mount.querySelector("#pe-ev").textContent = money(profit);
+        mount.querySelector("#pe-mv").textContent = mult + "×";
+        mount.querySelector("#pe-chart").innerHTML = chart(profit, mult);
+        mount.querySelector("#pe-out").innerHTML =
+          'At <b>' + mult + '×</b>, a <b>' + money(profit) + '</b> profit is worth <b style="color:#004c9b">' + money(val) + '</b>.' +
+          '<br><span style="color:#5b6675">Halve the multiple → ' + money(val / 2) + '; double it → ' + money(val * 2) + '. Same profit.</span>';
+      }
+      eEl.addEventListener("input", update);
+      mEl.addEventListener("input", update);
+      update();
+    },
+
+    "sales-funnel": function (mount) {
+      var stages = [
+        { n: "Leads", c: 100, w: 196 },
+        { n: "Sales-qualified (SQL)", c: 40, w: 158 },
+        { n: "Value proposition", c: 25, w: 122 },
+        { n: "Proposal / quote", c: 12, w: 90 },
+        { n: "Negotiation & review", c: 6, w: 60 },
+        { n: "Closed", c: 3, w: 36 }
+      ];
+      var cx = 120, svg = '<svg viewBox="0 0 300 200" width="100%" height="200" role="img" aria-label="Sales funnel narrowing from many leads to a few closed deals">';
+      stages.forEach(function (s, i) {
+        var y = 14 + i * 30, x = cx - s.w / 2, op = (0.3 + i * 0.12).toFixed(2);
+        svg += '<rect x="' + x + '" y="' + y + '" width="' + s.w + '" height="23" rx="4" fill="#004c9b" opacity="' + op + '"/>';
+        svg += '<text x="' + cx + '" y="' + (y + 15.5) + '" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">' + s.c + '</text>';
+        svg += '<text x="228" y="' + (y + 15.5) + '" font-size="9" fill="#0f1b2d">' + s.n + '</text>';
+      });
+      svg += '</svg>';
+      mount.innerHTML =
+        '<div class="widget"><h4>The sales cycle is a funnel</h4>' +
+        '<p class="sub">Every step qualifies harder than the last, so the numbers fall away fast — you spend your energy only where a deal can still happen.</p>' +
+        svg +
+        '<p class="illus-note">Illustrative drop-off — real rates vary, but the shape always narrows.</p></div>';
+    },
+
     "venture-lifecycle": function (mount) {
       var bands = ["Seed", "Early", "Market", "Scale"], bx = [34, 97, 160, 223, 286];
       var svg =
