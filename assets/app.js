@@ -186,13 +186,15 @@
   /* ---------- lazy widgets ---------- */
   function wireWidgets() {
     Array.prototype.forEach.call(root.querySelectorAll("details.more"), function (det) {
-      var mount = det.querySelector(".widget-mount[data-widget]");
-      if (!mount) return;
+      var mounts = det.querySelectorAll(".widget-mount[data-widget]");
+      if (!mounts.length) return;
       det.addEventListener("toggle", function () {
-        if (det.open && !mount.getAttribute("data-built")) {
+        if (!det.open) return;
+        Array.prototype.forEach.call(mounts, function (mount) {
+          if (mount.getAttribute("data-built")) return;
           var w = WIDGETS[mount.getAttribute("data-widget")];
           if (w) { w(mount); mount.setAttribute("data-built", "1"); }
-        }
+        });
       });
     });
   }
@@ -217,6 +219,37 @@
 
   /* ---------- widget registry ---------- */
   var WIDGETS = {
+    "venture-lifecycle": function (mount) {
+      var bands = ["Seed", "Early", "Market", "Scale"], bx = [34, 97, 160, 223, 286];
+      var svg =
+        '<svg viewBox="0 0 300 190" width="100%" height="190" role="img" aria-label="Venture lifecycle: growth climbs in steps, risk falls, and EBITDA traces a J-curve that crosses zero about halfway through the market stage">' +
+        '<rect x="34" y="16" width="63" height="136" fill="rgba(0,76,155,.035)"/>' +
+        '<rect x="160" y="16" width="63" height="136" fill="rgba(0,76,155,.035)"/>' +
+        '<line x1="97" y1="16" x2="97" y2="152" stroke="rgba(0,76,155,.12)"/>' +
+        '<line x1="160" y1="16" x2="160" y2="152" stroke="rgba(0,76,155,.12)"/>' +
+        '<line x1="223" y1="16" x2="223" y2="152" stroke="rgba(0,76,155,.12)"/>' +
+        '<line x1="34" y1="152" x2="286" y2="152" stroke="rgba(0,76,155,.18)"/>' +
+        '<line x1="34" y1="112" x2="286" y2="112" stroke="#9aa4b2" stroke-width="1" stroke-dasharray="3 3"/>' +
+        '<text x="285" y="108" text-anchor="end" font-size="8" fill="#5b6675">EBITDA = 0</text>' +
+        '<path d="M34,26 C 120,60 190,120 286,148" fill="none" stroke="#b23a3a" stroke-width="2" stroke-dasharray="5 4" opacity=".8"/>' +
+        '<polyline points="34,142 97,142 97,118 160,118 160,88 223,88 223,48 286,48" fill="none" stroke="#004c9b" stroke-width="2.6" stroke-linejoin="round"/>' +
+        '<path d="M34,112 C 80,140 150,140 191,112 S 250,74 286,58" fill="none" stroke="#1f8a5b" stroke-width="2.4"/>' +
+        '<circle cx="191" cy="112" r="4.5" fill="#ffdc00" stroke="#003a75" stroke-width="1.4"/>' +
+        bands.map(function (b, i) { return '<text x="' + ((bx[i] + bx[i + 1]) / 2) + '" y="166" text-anchor="middle" font-size="9" fill="#0f1b2d">' + b + '</text>'; }).join("") +
+        '<text x="160" y="184" text-anchor="middle" font-size="8" fill="#5b6675">time →</text>' +
+        '</svg>';
+      mount.innerHTML =
+        '<div class="widget"><h4>The venture lifecycle, in one picture</h4>' +
+        '<p class="sub"><b style="color:#004c9b">Growth</b> climbs in steps, <b style="color:#b23a3a">risk</b> falls as you prove the model, and <b style="color:#1f8a5b">EBITDA</b> (profit) dips negative before crossing zero — the gold dot — about halfway through the market stage.</p>' +
+        svg +
+        '<div style="display:flex;gap:16px;flex-wrap:wrap;font-size:.8rem;color:#5b6675;margin-top:6px">' +
+          '<span><b style="color:#004c9b">━</b> growth (staircase)</span>' +
+          '<span><b style="color:#b23a3a">╍</b> risk</span>' +
+          '<span><b style="color:#1f8a5b">━</b> EBITDA / profit</span>' +
+        '</div>' +
+        '<p class="illus-note">Illustrative — the shape, not exact numbers. Real timelines vary.</p></div>';
+    },
+
     "compound-growth": function (mount) {
       mount.innerHTML =
         '<div class="widget"><h4>Feel compounding</h4>' +
