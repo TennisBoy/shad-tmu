@@ -254,6 +254,15 @@ window.SHAD = {
 <li><b>Focus, then pivot</b> — commit hard, but change direction fast the moment the evidence says so.</li>
 </ul>
 <p>His bottom line, said twice for emphasis: <b>focus on the product, and prioritize ruthlessly.</b> Every tool above just protects the time to build the one thing that actually matters.</p>
+<p><b>So what's the company actually worth?</b> For a public company the headline number is <b>market cap</b> — share price × number of shares — the market's total price tag on the business. But how do you price one that isn't public yet?</p>
+<p><b>The comparables method</b> is how it's done in practice:</p>
+<ul>
+<li><b>Understand the performance</b> — start with the real numbers: revenue, earnings, growth, margins.</li>
+<li><b>Find a comparable</b> — a similar company (same industry, model, size) the market <em>already</em> prices.</li>
+<li><b>Determine the multiple</b> — the ratio the market pays for that comp, e.g. the <b>P/E ratio</b> (price ÷ earnings): “investors pay $X for every $1 of yearly profit.”</li>
+<li><b>Gear it to your attributes</b> — nudge that multiple up or down for how you differ: faster growth, fatter margins or lower risk earn a <em>higher</em> multiple; the opposite earns a lower one.</li>
+</ul>
+<p>That last step is why identical earnings can be worth wildly different amounts. A company making $1M a year at a P/E of 10 is worth ~$10M; at a P/E of 20, ~$20M — <b>same profit, double the value.</b> The multiple the market assigns (driven by growth hopes, risk and hype) moves the price as much as the earnings do.</p>
 <p><b>And how does everyone finally get paid?</b> All that equity is just paper until a “liquidity event” — an <b>exit</b> — turns it into cash. Four ways out:</p>
 <ul>
 <li><b>Strategic sale</b> — a bigger company acquires you, and pays up because you make <em>them</em> better: you lift their efficiency, or they push your product through global sales channels and distribution you could never build yourself. The classic startup happy ending.</li>
@@ -262,7 +271,7 @@ window.SHAD = {
 <li><b>Bankruptcy</b> — the exit nobody wants: the venture can't cover its debts and winds down, assets sold to repay creditors, with shareholders last in line and often left with nothing.</li>
 </ul>
 <p>Every investor back on that funding staircase is betting you reach one of the first three before the fourth.</p>`,
-          agenda:"Attention to detail as a moat (the Van Halen brown-M&amp;M test) → play offense as a venture → ideation: purpose, value proposition, competitive edge → your “right to win” and how you differentiate → test cheaply (MVP) and the money side (break-even) → the funding staircase (3 Fs → angels → VC → bridge → revenue) → each stage's core job (early adopter → sales at scale) → the sales cycle → prioritizing what will “kill you next” → and how everyone finally gets paid: the exit (strategic sale / IPO / MBO-LBO / bankruptcy).",
+          agenda:"Attention to detail as a moat (the Van Halen brown-M&amp;M test) → play offense as a venture → ideation: purpose, value proposition, competitive edge → your “right to win” and how you differentiate → test cheaply (MVP) and the money side (break-even) → the funding staircase (3 Fs → angels → VC → bridge → revenue) → each stage's core job (early adopter → sales at scale) → the sales cycle → prioritizing what will “kill you next” → valuing the company (market cap, comparables, P/E multiples) → and how everyone finally gets paid: the exit (strategic sale / IPO / MBO-LBO / bankruptcy).",
           buildoff:"Pair this with Thursday's design thinking — same loop, money lens. He's a real investor who's run three software companies, so ask the sharp one: what's the cheapest experiment that would prove your SHAD project idea is worth pursuing?" },
         { display_time:"7:00 PM", kind:"social", title:"Waterballoon Fight", location:"The Quad",
           primer_gist:"Exactly what it says. Wear clothes you don't mind soaking, and leave your phone inside." }
