@@ -5,7 +5,7 @@
 window.SHAD = {
   tz: "America/Toronto",
   ga_id: "",                       // ← paste GA4 id "G-XXXXXXXXXX" to turn analytics on
-  program: { start: "2026-07-06", end: "2026-07-12" },  // Week 1 (more weeks appended as they arrive)
+  program: { start: "2026-07-06", end: "2026-07-19" },  // Weeks 1–2 (more weeks appended as they arrive)
 
   days: {
 
@@ -325,6 +325,167 @@ window.SHAD = {
           primer_gist:"A wander through Kensington Market — Toronto's most eclectic neighbourhood: vintage shops, global food, murals. Bring a little cash." },
         { display_time:"2:30 PM", kind:"field-trip", title:"Cedar Glen", group:"Group 2", location:"Cedar Glen (north of the city)",
           primer_gist:"An off-site trip to Cedar Glen — outdoor/retreat space for a change of pace from campus." }
+      ]
+    },
+
+    /* ========================================= WEEK 2 ========================================= */
+
+    /* ===================== MONDAY — retreat ===================== */
+    "2026-07-13": {
+      week: 2,
+      headline: "Retreat at Cedar Glen, then back to the city.",
+      pa_duty: { room_checks: [], off: [] },
+      sessions: [
+        { display_time:"Morning", kind:"field-trip", title:"Cedar Glen Retreat", location:"YMCA Cedar Glen Outdoor Centre, Schomberg",
+          primer_gist:"An outdoor retreat at the YMCA's 263-acre Cedar Glen centre on the Oak Ridges Moraine, north of the city — a reset away from campus before Week 2 kicks in.",
+          primer_full:`<p>Cedar Glen is the <b>YMCA of Greater Toronto's outdoor-education centre</b> in Schomberg, Ontario — 263 acres of forest and trail on the Oak Ridges Moraine. Expect team-building, outdoor activities and some downtime; nothing to prep beyond clothes for the weather.</p>` }
+      ]
+    },
+
+    /* ===================== TUESDAY — breather + project ===================== */
+    "2026-07-14": {
+      week: 2,
+      headline: "A breather, a mall run, and the design challenge.",
+      pa_duty: { room_checks: [], off: [ {pa:"Fatimah", when:"10:15–11 AM (Faiqa covers)"} ] },
+      sessions: [
+        { display_time:"1:00 PM", kind:"field-trip", title:"Mall Outing", location:"Toronto",
+          primer_gist:"A group trip to the mall — errands, food and a change of scene. Bring whatever you need to restock for the week." },
+        { display_time:"7:00 PM", kind:"workshop", title:"Design Challenge Chat", location:"PIT 200",
+          primer_gist:"A working check-in on the SHAD Design–Entrepreneurship challenge — where your team is and what to tackle next.",
+          primer_full:`<p>A project working session, not a lecture — a chance to pressure-test your team's direction on the SHAD DE brief (<em>Reimagining the Lifecycle of Everyday Goods</em>): the problem, the users, and the value you're actually creating, then line up the week's build.</p>`,
+          buildoff:"Come with your team's one-sentence problem statement. If you can't say it in a sentence, that's tonight's job." }
+      ]
+    },
+
+    /* ===================== WEDNESDAY — into the labs ===================== */
+    "2026-07-15": {
+      week: 2,
+      headline: "Into the labs — nursing simulation, and prepping to do real science.",
+      pa_duty: {
+        room_checks: [ {floor:"6",pa:"Niksha"}, {floor:"7",pa:"Jenna"}, {floor:"8",pa:"Faiqa"} ],
+        off: []
+      },
+      sessions: [
+        { display_time:"8:30 AM", kind:"workshop", title:"SciXChange Prep: Lab Skills & Etiquette", speaker:"TMU SciXChange", location:"DCC 350/352",
+          speaker_gist:"TMU's science-outreach office — its mission is to make science engaging, comprehensible and accessible.",
+          primer_gist:"A short primer to get you lab-ready before the real university labs — safety, proper technique and lab etiquette.",
+          primer_full:`<p><b>SciXChange</b> is Toronto Metropolitan University's science-outreach office (it runs events like Science Rendezvous and Soapbox Science). This session sets you up to work in a real lab:</p><ul><li><b>Safety</b> — protective equipment, hazard symbols, where the emergency gear is, no food or drink.</li><li><b>Technique</b> — measuring and handling equipment carefully, following a protocol, recording what you actually did.</li><li><b>Etiquette</b> — clean your station, share equipment, dispose of waste properly, work respectfully in a group.</li></ul><p><em>(The specific station list wasn't published; the above is the standard shape of a pre-lab session.)</em></p>`,
+          buildoff:"This rigor is exactly what your IB science labs are graded on — treat it as free marks later." },
+        { display_time:"10:00 AM", kind:"workshop", title:"Nursing Simulation Lab", group:"Groups 1 & 4", speaker:"Susana Neves-Silva", role:"Manager, Central Placement Office & Simulation — Daphne Cockwell School of Nursing, TMU", location:"DCC 4th Floor",
+          speaker_gist:"Runs the placements office and the simulation lab at TMU's Daphne Cockwell School of Nursing.",
+          primer_gist:"A tour and hands-on time in a nursing simulation lab — a mock hospital ward with computerized patient manikins where students practise real care safely.",
+          primer_full:`<p>A <b>simulation lab</b> is a mock hospital ward — real beds, monitors and supplies — where nursing students rehearse care in a safe space before ever touching a real patient. TMU frames it as building "competence and confidence" through realistic clinical scenarios.</p><p><b>High-fidelity manikins</b> are computerized, life-size patient simulators that breathe, have a pulse, blink, speak and respond to treatment; an instructor programs a scenario (say, a patient going into distress) and students must react. TMU's lab — used by ~400 students a year — also has 3D holographic anatomy tables and VR, after a <b>$1.6M</b> 2022 upgrade.</p><p><b>Why it matters:</b> you can make and fix mistakes with zero risk to a real person, practise rare emergencies on demand, and repeat a skill until it's reliable. On a tour you might handle vital-signs gear (blood-pressure cuff, pulse-oximeter, stethoscope) and task-trainers for skills like IV insertion.</p><p><em>TMU's Daphne Cockwell School of Nursing was, in 1964, the first general post-secondary institution in Canada to offer a nursing program.</em></p>`,
+          buildoff:"Ask what the manikins can simulate that a textbook can't — usually 'a patient who changes while you're deciding what to do.'" },
+        { display_time:"2:00 PM", kind:"social", title:"Yoga with Charlotte Hunter", location:"RAC Studio I",
+          primer_gist:"A yoga session in TMU's Recreation & Athletics Centre — stretch, breathe and reset mid-week. No experience needed; wear something you can move in." },
+        { display_time:"2:00 PM", kind:"workshop", title:"Nursing Simulation Lab", group:"Groups 2 & 3", speaker:"Susana Neves-Silva", role:"Manager, Central Placement Office & Simulation — Daphne Cockwell School of Nursing, TMU", location:"DCC 4th Floor",
+          speaker_gist:"Runs the placements office and simulation lab at TMU's Daphne Cockwell School of Nursing.",
+          primer_gist:"The afternoon rotation of the nursing simulation lab — a mock ward with computerized patient manikins for safe, hands-on practice." },
+        { display_time:"6:00 PM", kind:"social", title:"Multicultural Night", location:"SLC 8th Floor",
+          primer_gist:"A celebration of the many cultures in your SHAD cohort — food, performances and sharing where everyone's from. Bring something that represents you if you've got it." }
+      ]
+    },
+
+    /* ===================== THURSDAY (today) — SickKids + quantum ===================== */
+    "2026-07-16": {
+      week: 2,
+      headline: "SickKids in the morning, quantum computing out of pure light by afternoon.",
+      pa_duty: {
+        room_checks: [ {floor:"6",pa:"Daniel"}, {floor:"7",pa:"Rishaan"}, {floor:"8",pa:"Arianna"} ],
+        off: [ {pa:"Joella", when:"off (Niksha covers)"}, {pa:"Fadumo", when:"off (Faiqa covers)"}, {pa:"Sirna", when:"off (Michela covers)"}, {pa:"Jenna", when:"off (Zoe/Lauren cover)"} ]
+      },
+      sessions: [
+        { display_time:"9:00 AM", kind:"lecture", title:"SickKids Research + Medical Lecture", speaker:"David Manly", role:"Research Program Coordinator, Kids Science — The Hospital for Sick Children (SickKids)", location:"DCC 350/352",
+          speaker_gist:"A science communicator who runs Kids Science, SickKids' hands-on research-outreach program for young people.",
+          primer_gist:"How SickKids works and the research done there, then a hands-on workshop on how the respiratory, circulatory and digestive systems work together.",
+          primer_full:`<p><b>SickKids</b> (The Hospital for Sick Children, Toronto) calls itself Canada's largest and most respected paediatric academic health sciences centre; its research institute has 2,000+ researchers, trainees and staff and is affiliated with the University of Toronto. <b>Kids Science</b> is its outreach program getting young people into real research.</p><p>The workshop looks at three body systems and — the real point — how they <b>interconnect</b>:</p><ul><li><b>Respiratory</b> — in the lungs' air sacs, oxygen passes into the blood and carbon dioxide passes out to be exhaled (O₂ in, CO₂ out).</li><li><b>Circulatory</b> — the heart pumps blood through vessels, delivering O₂ and nutrients to every cell and hauling CO₂ and waste away.</li><li><b>Digestive</b> — food is broken down (mouth → stomach → small intestine) into absorbable nutrients that cross into the bloodstream.</li></ul><p><b>The connection:</b> the circulatory system is the shared delivery network — carrying oxygen from the lungs and nutrients from the gut to your cells, which combine them (cellular respiration) to make energy, then carrying the CO₂ back to the lungs to breathe out. None of the three works alone.</p>`,
+          buildoff:"It's led by a science *communicator* — a great person to ask how you explain hard research to people simply (a skill worth as much as the science)." },
+        { display_time:"1:00 PM", kind:"social", title:"Dodgeball", location:"MAC Court",
+          primer_gist:"House-group dodgeball in the MAC gym — low stakes, high energy. Wear something you can sprint in." },
+        { display_time:"4:30 PM", kind:"talk", title:"About Xanadu and Quantum Computing", speaker:"Daniel Nino", role:"Research Engagement Lead, Xanadu", location:"DCC 350/352",
+          speaker_gist:"A Xanadu team member (PhD) who does quantum-computing education and outreach using the company's PennyLane software.",
+          primer_gist:"What quantum computing is, careers in the field, and how Xanadu — a Toronto company — is building quantum computers out of light.",
+          primer_full:`<p><b>Xanadu</b> is a Toronto quantum-computing company (founded 2016 by Christian Weedbrook). Its bet is <b>photonic</b> quantum computing — computing with <em>particles of light (photons)</em> instead of the supercooled superconducting circuits most rivals use. In 2022 its "Borealis" machine ran a boson-sampling experiment published in <em>Nature</em>, a quantum-advantage-class result. It has raised ~US$245M and makes the open-source software PennyLane and Strawberry Fields.</p><p><b>The core ideas — why it's powerful:</b></p><ul><li><b>Qubit</b> — a quantum bit. A normal bit is 0 <em>or</em> 1; a qubit can be a blend of both at once, until you measure it and it snaps to a definite 0 or 1.</li><li><b>Superposition</b> — that "blend of both." With <em>n</em> qubits the machine can represent a combination of all 2ⁿ possibilities at once — where the power comes from. Drag the slider below to feel how fast 2ⁿ explodes.</li><li><b>Entanglement</b> — qubits linked so their results are correlated no matter how far apart; measuring one tells you about the other. A resource ordinary bits don't have.</li><li><b>Why faster (the honest version)</b> — it's <em>not</em> "try every answer at once." A good quantum algorithm uses <b>interference</b> to make wrong answers cancel and right ones reinforce, reaching the answer in far fewer steps — but only for specific problems (factoring, simulating molecules, some search). It's no faster at everyday tasks.</li><li><b>Photonic (Xanadu's twist)</b> — using light means parts can run at or near room temperature and tap existing fibre-optic tech, and photons pick up less noise from their surroundings.</li></ul>`,
+          widget:"qubit-power",
+          agenda:"What a qubit / superposition / entanglement are → why quantum helps only for specific problems → what Xanadu builds (photonic hardware) → careers in the field.",
+          buildoff:"Ask what a photonic computer can do at room temperature that a supercooled one can't — that's Xanadu's whole bet." },
+        { display_time:"5:00 PM", kind:"workshop", title:"Intro to Quantum Computing using PennyLane", speaker:"Daniel Nino", role:"Research Engagement Lead, Xanadu", location:"DCC 350/352",
+          speaker_gist:"The same Xanadu educator, now hands-on with PennyLane — the software you'll actually try.",
+          primer_gist:"A hands-on intro to PennyLane, Xanadu's free Python tool for programming quantum computers — its tagline: 'train a quantum computer the same way as a neural network.'",
+          primer_full:`<p><b>PennyLane</b> is Xanadu's open-source Python library for quantum computing and quantum machine learning. Its signature trick is <b>automatic differentiation of quantum circuits</b> — it can compute gradients through a quantum circuit, which is exactly what lets you <em>train</em> one the way you train a neural network (nudging it to get better).</p><p>Two things make it approachable: it plugs into tools you may know (<b>NumPy, PyTorch, JAX</b>) to mix quantum and classical code, and the <em>same</em> circuit runs on many backends (Xanadu, IBM, Google, Amazon Braket) so you're not locked to one machine. You don't need to master quantum physics to start — you'll write short programs and watch a circuit behave.</p>`,
+          buildoff:"Pair it with the 4:30 talk: that one is the *why*, this is the *how*. Ask what the smallest useful thing you could build with PennyLane is." },
+        { display_time:"7:30 PM", kind:"social", title:"Masquerade Ball", location:"DCC 350/352",
+          primer_gist:"A masquerade-themed evening — music, masks and a break from the grind. Dress up as much as you like." }
+      ]
+    },
+
+    /* ===================== FRIDAY — sprint, startup, the ER ===================== */
+    "2026-07-17": {
+      week: 2,
+      headline: "A design sprint, a scooter startup, and the emergency room.",
+      pa_duty: {
+        room_checks: [ {floor:"6",pa:"Sirna"}, {floor:"7",pa:"Ayesha"}, {floor:"8",pa:"Joella"} ],
+        off: [ {pa:"Arianna", when:"off (Niksha covers)"}, {pa:"Daniel", when:"off (Faiqa covers)"}, {pa:"Joseph", when:"off (Michela covers)"}, {pa:"Jenn", when:"evening off"} ]
+      },
+      sessions: [
+        { display_time:"9:00 AM", kind:"workshop", title:"Design Thinking Sprint", speaker:"Ashu Syal & Tabitha Grant", role:"Director, TMU Innovation Boost Zone · TMU Centre Manager", location:"DCC 350/352",
+          speaker_gist:"Ashu Syal directs incubation at TMU's startup zone (the Innovation Boost Zone); Tabitha Grant is a TMU manager who has run student sustainability-and-design programs.",
+          speaker_full:`<p><b>Ashu Syal</b> is Director at TMU's <b>Innovation Boost Zone</b>, the university's startup incubator, where he leads the incubation programming that coaches early founders from idea to prototype. He's an engineer by training and a former product manager.</p><p><b>Tabitha Grant</b> is a Centre Manager at TMU who has run student <b>sustainability programs</b> built around "what happens when waste is reimagined as design" — the same terrain as your SHAD brief on the lifecycle of everyday goods.</p>`,
+          primer_gist:"A time-boxed design sprint: run the whole design-thinking loop fast to answer your project's riskiest question before you build the wrong thing.",
+          primer_full:`<p>A <b>design sprint</b> is design thinking on a stopwatch. The full loop is <b>Empathize → Define → Ideate → Prototype → Test</b>; a sprint time-boxes it (famously 5 days, or a few hours in a workshop) to <em>answer one big risky question fast</em> instead of spending weeks building the wrong thing.</p><p>Two ideas do the heavy lifting:</p><ul><li><b>Fake the product.</b> The prototype is a façade — a paper mock-up or clickable slideshow that looks real enough to react to but takes hours, not months — so you can test with real users while it's still cheap to change everything.</li><li><b>Diverge, then converge.</b> First go wide (sketch lots of ideas alone, no criticism), then narrow hard (vote, pick one to prototype). Sketching alone first means quiet good ideas survive the loud people.</li></ul>`,
+          buildoff:"This is your SHAD project's method, compressed. Bring your team's riskiest assumption — the sprint is built to test exactly that." },
+        { display_time:"2:00 PM", kind:"talk", title:"Entrepreneurship: Building Scooty", speaker:"Shoaib Ahmed", role:"Founder & CEO, Scooty", location:"DCC 350/352",
+          speaker_gist:"Founder & CEO of Scooty, the Brampton startup that launched Ontario's first e-scooter program — and it started with a group of TMU students.",
+          speaker_full:`<p><b>Shoaib Ahmed</b> is Founder & CEO of <b>Scooty</b>, a Brampton, Ontario micro-mobility company that launched <b>Ontario's first e-scooter program</b>. The origin: in 2019 he and a group of Toronto Metropolitan University students rode shared e-scooters in Washington, DC and asked "why can't we do this in Ontario?" He came back and built it, pushing through slow regulation and a tough market. His line: <em>"Mobility is a human right."</em></p>`,
+          primer_gist:"How a first-principles observation ('why not here?') became a real company — and what it takes to build in a market held back by regulation.",
+          primer_full:`<p>Scooty is a case study in a hard kind of startup: one whose biggest obstacle isn't the tech but the <b>rules</b>. Shared e-scooters needed cities and the province to allow them at all, so Ahmed's job was as much winning over regulators and stakeholders as building an app. (His accelerator, TBDC, connected him with senior figures including Canada's federal Transport Minister.)</p><p>The takeaway for your project: some of the best ideas are blocked not by "can we build it?" but by "will the system let us?" — and the founders who win learn to move that system.</p>`,
+          buildoff:"Ask the regulation question: how do you build a business when it's effectively illegal until you convince someone to change the rule? Ties straight to McCarthy's 'play offense.'" },
+        { display_time:"7:00 PM", kind:"panel", title:"GridlockMD & Emergency Medicine Panel", speaker:"Dr. Teresa Chan", role:"Founding Dean, TMU School of Medicine · Emergency Physician", location:"DCC 350/352",
+          speaker_gist:"Founding Dean of TMU's new School of Medicine and a practising ER doctor — named one of Maclean's top-10 most influential Canadians in health care (2024).",
+          speaker_full:`<p><b>Dr. Teresa Chan</b> is the <b>founding Dean of Toronto Metropolitan University's School of Medicine</b> and TMU's VP, Medical Affairs (since 2023), and a practising <b>emergency physician</b> (William Osler Health System). She came from McMaster, where she was a clinician-scientist in medical education, has 230+ peer-reviewed papers, and was named to <b>Maclean's 2024 Power List</b> of the top 10 most influential Canadians in health care.</p><p>She co-designed <b>GridlockED</b> — a <em>serious game</em> (educational board game) that simulates emergency-department patient flow so trainees learn to manage ER "gridlock." (The schedule's "GridlockMD" is almost certainly this.)</p>`,
+          primer_gist:"What emergency medicine really is, how triage sorts patients by urgency, why ERs 'gridlock' — and how she teaches it with a board game.",
+          primer_full:`<p><b>Emergency medicine</b> is the specialty of the acute: ER doctors treat whatever comes through the door — heart attack, broken bone, allergic reaction, mental-health crisis — without knowing in advance what's next. The skill is fast decisions on incomplete information: stabilize first, diagnose as you go.</p><p><b>Triage</b> is how the ER copes: arriving patients are sorted by <em>how urgent</em>, not who came first (Canada uses the CTAS 1–5 scale, 1 = resuscitate now, 5 = can safely wait). It's allocating a scarce resource — doctor time — under pressure.</p><p><b>"Gridlock"</b> is when patients arrive faster than the department can move them through — often because admitted patients have no ward bed upstairs — so the whole ER jams: ambulances wait, hallways fill, care slows. The bottleneck is the <em>flow</em>, not one slow doctor.</p><p><b>Her twist — serious games.</b> <b>GridlockED</b> is a board game built to <em>teach</em> that flow: trainees make the tradeoffs themselves where mistakes cost points, not lives — part of a bigger move toward simulation and tech in training doctors, which is what she's building the new TMU medical school around.</p>`,
+          agenda:"What ER medicine is like → triage (CTAS) → why ERs gridlock → learning it through a serious game → Q&A.",
+          buildoff:"It's a panel — your question is the value. Ask how a board game teaches judgment better than a textbook; it links to your own project's 'how do people actually learn this?'" }
+      ]
+    },
+
+    /* ===================== SATURDAY — arena + Hustle 201 ===================== */
+    "2026-07-18": {
+      week: 2,
+      headline: "Behind the scenes at Scotiabank Arena, then Hustle 201.",
+      pa_duty: {
+        room_checks: [ {floor:"6",pa:"Joseph"}, {floor:"7",pa:"Jacob"}, {floor:"8",pa:"Fadumo"} ],
+        off: [ {pa:"Raquel", when:"off (Faiqa covers)"}, {pa:"Rishaan", when:"off (Niksha covers)"}, {pa:"Jenn", when:"off"} ]
+      },
+      sessions: [
+        { display_time:"9:00 AM", kind:"field-trip", title:"Scotiabank Arena Tour", location:"Scotiabank Arena, Downtown Toronto",
+          primer_gist:"A behind-the-scenes tour of Scotiabank Arena — home of the Maple Leafs (NHL) and Raptors (NBA) — into the suites, lounges and spaces fans never see. (Groups 1 & 3 at 9:00; Groups 2 & 4 at 10:00.)",
+          primer_full:`<p>Scotiabank Arena is MLSE's downtown venue for the <b>Toronto Maple Leafs</b> and <b>Toronto Raptors</b>. A guided tour goes behind the scenes — luxury suites, player areas and VIP lounges, the rarely-seen side of where game nights and concerts come together. (Heads-up: dressing-room access isn't guaranteed and depends on team schedules.)</p>` },
+        { display_time:"1:00 PM", kind:"field-trip", title:"Mall Day", location:"Toronto",
+          primer_gist:"A longer stretch at the mall — shopping, food and downtime with your house before the last leg of the program." },
+        { display_time:"8:00 PM", kind:"talk", title:"Hustle 201", location:"DCC 350/352",
+          primer_gist:"The follow-up to Week 1's 'Hustle 101' — more on initiative and making things happen with what you've already got, one level up.",
+          buildoff:"If you caught Hustle 101, come with the one idea you actually acted on since — and what happened." }
+      ]
+    },
+
+    /* ===================== SUNDAY — art, football, last night ===================== */
+    "2026-07-19": {
+      week: 2,
+      headline: "Art, football, and a last big night.",
+      pa_duty: {
+        room_checks: [ {floor:"6",pa:"Raquel"}, {floor:"7",pa:"Fatimah"}, {floor:"8",pa:"Niksha"} ],
+        off: [ {pa:"Ayesha", when:"off (Faiqa covers)"}, {pa:"Fadumo", when:"off (Niksha covers)"}, {pa:"Rishaan", when:"off (Michela covers)"}, {pa:"Jenn", when:"morning off"} ]
+      },
+      sessions: [
+        { display_time:"10:30 AM", kind:"field-trip", title:"Art Gallery of Ontario (AGO)", location:"Downtown Toronto",
+          primer_gist:"A visit to the AGO — one of North America's largest art museums, 120,000+ works from Indigenous and Canadian art to European masters, behind a landmark Frank Gehry facade.",
+          primer_full:`<p>The <b>Art Gallery of Ontario</b> is one of the largest art museums in North America, with a collection of more than <b>120,000 works</b> — strong in Indigenous and Canadian art (including the Group of Seven) alongside European masterpieces. Its 2008 wood-and-glass facade was designed by Toronto-born architect <b>Frank Gehry</b>. Give yourself time; it's big.</p>` },
+        { display_time:"3:00 PM", kind:"social", title:"World Cup Watch Party", location:"On campus",
+          primer_gist:"Gather to watch the football — snacks, rivalries and cheering, with the World Cup on home soil this summer. Wear your colours." },
+        { display_time:"7:30 PM", kind:"social", title:"Trivia Night", location:"DCC 350/352",
+          primer_gist:"A trivia showdown to close the week — bring your random knowledge and your house team." }
       ]
     }
 

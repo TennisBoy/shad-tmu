@@ -219,6 +219,45 @@
 
   /* ---------- widget registry ---------- */
   var WIDGETS = {
+    "qubit-power": function (mount) {
+      mount.innerHTML =
+        '<div class="widget"><h4>Why qubits get powerful fast</h4>' +
+        '<p class="sub">Each extra qubit <b>doubles</b> the number of states the machine can hold at once — that\'s 2ⁿ. On the log scale below, that explosion is a straight line.</p>' +
+        '<div id="qp-chart"></div>' +
+        '<div class="slider-row"><label for="qp-n">Qubits</label><input id="qp-n" type="range" min="1" max="50" step="1" value="20"><span class="readout" id="qp-nv">20</span></div>' +
+        '<p style="margin:12px 0 0;font-size:.95rem" id="qp-out"></p>' +
+        '<p class="illus-note">Illustrative — real machines lose some of this to noise/error. ~300 qubits would exceed the number of atoms in the observable universe.</p></div>';
+      var nEl = mount.querySelector("#qp-n");
+      function fmt(n) {
+        if (n <= 50) return Math.pow(2, n).toLocaleString("en-US");
+        var log10 = n * Math.LN2 / Math.LN10, exp = Math.floor(log10);
+        return (Math.pow(10, log10 - exp)).toFixed(1) + " × 10^" + exp;
+      }
+      function chart(n) {
+        var x0 = 30, x1 = 230, y0 = 122, y1 = 14, NMAX = 50;
+        var sx = function (k) { return (x0 + (x1 - x0) * (k / NMAX)).toFixed(1); };
+        var sy = function (k) { return (y0 - (y0 - y1) * (k / NMAX)).toFixed(1); };
+        return '<svg viewBox="0 0 240 140" width="100%" height="130" role="img" aria-label="Number of states doubles with each qubit; a straight line on a log scale">' +
+          '<line x1="' + x0 + '" y1="' + y1 + '" x2="' + x0 + '" y2="' + y0 + '" stroke="rgba(0,76,155,.14)"/>' +
+          '<line x1="' + x0 + '" y1="' + y0 + '" x2="' + x1 + '" y2="' + y0 + '" stroke="rgba(0,76,155,.14)"/>' +
+          '<polyline points="' + sx(0) + ',' + sy(0) + ' ' + sx(NMAX) + ',' + sy(NMAX) + '" fill="none" stroke="#004c9b" stroke-width="2.6" stroke-linecap="round"/>' +
+          '<line x1="' + sx(n) + '" y1="' + sy(n) + '" x2="' + sx(n) + '" y2="' + y0 + '" stroke="#9aa4b2" stroke-width="1" stroke-dasharray="3 3"/>' +
+          '<circle cx="' + sx(n) + '" cy="' + sy(n) + '" r="5" fill="#ffdc00" stroke="#003a75" stroke-width="1.5"/>' +
+          '<text x="' + x0 + '" y="10" font-size="8" fill="#5b6675">states (log scale)</text>' +
+          '<text x="130" y="136" text-anchor="middle" font-size="10" fill="#5b6675">qubits →</text></svg>';
+      }
+      function update() {
+        var n = +nEl.value;
+        mount.querySelector("#qp-nv").textContent = n;
+        mount.querySelector("#qp-chart").innerHTML = chart(n);
+        mount.querySelector("#qp-out").innerHTML =
+          '<b>' + n + '</b> qubits hold <b style="color:#004c9b">2<sup>' + n + '</sup> = ' + fmt(n) + '</b> states at once.' +
+          '<br><span style="color:#5b6675">Add one more qubit → it doubles.</span>';
+      }
+      nEl.addEventListener("input", update);
+      update();
+    },
+
     "pe-valuation": function (mount) {
       mount.innerHTML =
         '<div class="widget"><h4>How the multiple sets the price</h4>' +
