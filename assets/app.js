@@ -96,30 +96,56 @@
     return h;
   }
 
-  /* ---------- TODAY view ---------- */
-  function renderToday() {
-    var day = SHAD.days[TODAY];
-    var eyebrow = '<span class="eyebrow"><span class="today-pill">TODAY</span> ' + fmtDate(TODAY, { weekday: "long", month: "long", day: "numeric" }) + '</span>';
+  /* ---------- DAY view (today by default, or any date via ?date=YYYY-MM-DD) ---------- */
+  function param(name) {
+    var m = new RegExp("[?&]" + name + "=([^&#]+)").exec(window.location.search);
+    return m ? decodeURIComponent(m[1]) : null;
+  }
+  function adjDates(target) {
+    var all = Object.keys(SHAD.days).sort(), prev = null, next = null;
+    for (var i = 0; i < all.length; i++) {
+      if (all[i] < target) prev = all[i];
+      else if (all[i] > target && next === null) next = all[i];
+    }
+    return { prev: prev, next: next };
+  }
+  function dayNav(target) {
+    var a = adjDates(target);
+    var btn = function (d, dir) {
+      if (!d) return '<span class="daynav-btn disabled">' + (dir === "prev" ? "← Prev" : "Next →") + '</span>';
+      var wk = fmtDate(d, { weekday: "short", month: "short", day: "numeric" });
+      return '<a class="daynav-btn" href="index.html?date=' + d + '">' + (dir === "prev" ? "← " + wk : wk + " →") + '</a>';
+    };
+    var jump = target === TODAY ? "" : '<a class="daynav-today" href="index.html">● Today</a>';
+    return '<div class="daynav">' + btn(a.prev, "prev") + jump + btn(a.next, "next") + '</div>';
+  }
+  function renderDay(target) {
+    var day = SHAD.days[target];
+    var isToday = target === TODAY;
+    var state = target < TODAY ? "past" : (target > TODAY ? "future" : "today");
+    var pill = isToday ? "TODAY" : (state === "past" ? "PAST" : "UPCOMING");
+    var eyebrow = '<span class="eyebrow"><span class="today-pill ' + state + '">' + pill + '</span> ' +
+      fmtDate(target, { weekday: "long", month: "long", day: "numeric" }) + '</span>';
     var html = header() + '<div class="wrap"><section><header class="hero">' + eyebrow;
 
     if (!day || !day.sessions || !day.sessions.length) {
-      var msg = "No sessions today — enjoy the breather.";
-      if (TODAY < SHAD.program.start) msg = "SHAD starts " + fmtDate(SHAD.program.start, { weekday: "long", month: "long", day: "numeric" }) + ".";
-      else if (TODAY > SHAD.program.end) msg = "That's a wrap on Week 1. New weeks land here as they're released.";
-      html += '<h1>' + (day ? esc(day.headline || "Today at SHAD") : "Today at SHAD") + '</h1></header>';
+      var msg = "No sessions scheduled" + (isToday ? " today — enjoy the breather." : ".");
+      if (target < SHAD.program.start) msg = "SHAD starts " + fmtDate(SHAD.program.start, { weekday: "long", month: "long", day: "numeric" }) + ".";
+      else if (target > SHAD.program.end) msg = "Beyond the current schedule — new weeks land here as they're released.";
+      html += '<h1>' + (day ? esc(day.headline || "SHAD @ TMU") : "SHAD @ TMU") + '</h1>' + dayNav(target) + '</header>';
       if (day) html += paStrip(day);
-      html += '<div class="empty-day"><h2>No sessions today</h2><p>' + msg + '</p></div>';
+      html += '<div class="empty-day"><h2>No sessions</h2><p>' + msg + '</p></div>';
     } else {
       var n = day.sessions.length;
       var words = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
       var cw = n <= 10 ? words[n].charAt(0).toUpperCase() + words[n].slice(1) : n;
-      html += '<h1>' + esc(day.headline || "Today at SHAD") + '</h1>' +
+      html += '<h1>' + esc(day.headline || "SHAD @ TMU") + '</h1>' +
         '<p class="lede"><span class="count">' + cw + '</span> ' + (n === 1 ? "session" : "sessions") +
-        ' today. Read the gist, tap to go deep.</p></header>';
+        (isToday ? " today" : " this day") + '. Read the gist, tap to go deep.</p>' + dayNav(target) + '</header>';
       html += paStrip(day);
-      html += '<div class="sessions">' + day.sessions.map(function (s, i) { return card(s, "shadnote:" + TODAY + ":" + i); }).join("") + '</div>';
+      html += '<div class="sessions">' + day.sessions.map(function (s, i) { return card(s, "shadnote:" + target + ":" + i); }).join("") + '</div>';
     }
-    html += '<div class="foot">SHAD @ TMU 2026 · focus on today · <a href="timeline.html">see the whole month →</a></div>';
+    html += '<div class="foot">SHAD @ TMU 2026 · <a href="timeline.html">see the whole month →</a></div>';
     html += '</section></div>';
     root.innerHTML = html;
     wireWidgets();
@@ -158,6 +184,10 @@
       el.addEventListener("click", toggle);
       el.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } });
     });
+    /* "Open →" links navigate to the full day view without toggling the row */
+    Array.prototype.forEach.call(root.querySelectorAll(".day-open"), function (a) {
+      a.addEventListener("click", function (e) { e.stopPropagation(); });
+    });
   }
   function dayRow(d) {
     var day = SHAD.days[d];
@@ -180,7 +210,8 @@
     detail += '</div>';
     return '<div class="day ' + state + (state === "today" ? " open" : "") + '" tabindex="0" role="button" aria-expanded="' + (state === "today") + '">' +
       '<div class="day-row"><span class="day-title">' + fmtDate(d, { weekday: "long" }) + " · " + fmtDate(d, { month: "long", day: "numeric" }) + '</span>' +
-      '<span class="day-meta">' + meta + '</span><span class="day-flag">' + flag + '</span></div>' + detail + '</div>';
+      '<span class="day-meta">' + meta + '</span><span class="day-flag">' + flag + '</span>' +
+      '<a class="day-open" href="index.html?date=' + d + '" aria-label="Open the full detail view for this day">Open →</a></div>' + detail + '</div>';
   }
 
   /* ---------- lazy widgets ---------- */
@@ -457,5 +488,9 @@
   }
 
   /* ---------- go ---------- */
-  if (view === "timeline") renderTimeline(); else renderToday();
+  if (view === "timeline") { renderTimeline(); }
+  else {
+    var q = param("date");
+    renderDay(q && /^\d{4}-\d{2}-\d{2}$/.test(q) && SHAD.days[q] ? q : TODAY);
+  }
 })();

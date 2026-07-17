@@ -148,6 +148,21 @@ details.more[open]>summary::after{transform:rotate(90deg)}
 .day-pa{margin-top:8px;font-size:.82rem;color:var(--muted)}
 .day-pa b{color:var(--tmu-blue)}
 
+/* "Open →" button on each timeline day row */
+.day-open{margin-left:12px;font-weight:800;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--tmu-blue);white-space:nowrap;padding:4px 10px;border:1px solid rgba(0,76,155,.28);border-radius:999px;transition:all .15s ease}
+.day-open:hover{background:var(--tmu-blue);color:#fff}
+.day.past{opacity:.62}
+.day.past .day-open{opacity:1}
+
+/* prev / next day navigation on the day view */
+.daynav{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:16px}
+.daynav-btn{font-weight:700;font-size:.85rem;text-decoration:none;padding:8px 14px;border:1px solid rgba(0,76,155,.28);border-radius:999px;color:var(--tmu-blue);background:var(--card);white-space:nowrap;transition:all .15s ease}
+.daynav-btn:hover{background:var(--tmu-blue);color:#fff}
+.daynav-btn.disabled{opacity:.4;pointer-events:none;color:var(--muted);border-color:var(--line);background:transparent}
+.daynav-today{margin-left:auto;font-weight:700;font-size:.82rem;text-decoration:none;color:var(--ink);border-bottom:2px solid var(--tmu-gold);padding-bottom:1px}
+.today-pill.past{background:#e7edf3;color:#31465e}
+.today-pill.future{background:#fff2a8;color:#5a4a00}
+
 .foot{margin-top:40px;text-align:center;color:var(--settled);font-size:.78rem}
 
 @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
