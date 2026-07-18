@@ -494,7 +494,7 @@
         wrap.innerHTML =
           '<button class="contribute-close" aria-label="Collapse this note">×</button>' +
           '<span class="contribute-lab">Got a note to add?</span>' +
-          '<p>Spotted something I missed, or have better notes? Email me and I\'ll add them to the site — with credit to you.</p>' +
+          '<p>If you spotted something I missed, or have better notes. Feel free to email me and I will add them to the site, with credit to you.</p>' +
           '<a href="mailto:william.yin@torontometropolitan.shad.ca">✉ william.yin@torontometropolitan.shad.ca</a>';
         wrap.querySelector(".contribute-close").addEventListener("click", function () {
           open = false; try { if (store) store.setItem(KEY, "0"); } catch (e) {} render();
