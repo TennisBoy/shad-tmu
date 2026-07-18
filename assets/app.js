@@ -82,7 +82,7 @@
     }
     if (s.primer_gist || s.primer_full) {
       var primerLab = s.kind === "social" ? "What it is" : "The primer";
-      var badge = s.kind === "social" ? null : "researched for you";
+      var badge = s.kind === "social" ? null : "researched for you + added notes";
       var full = s.primer_full || "";
       if (s.widget) full += '<div class="widget-mount" data-widget="' + esc(s.widget) + '"></div>';
       h += block(primerLab, s.primer_gist, full || null, "prep", badge);
