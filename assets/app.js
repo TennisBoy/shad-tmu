@@ -89,6 +89,10 @@
     }
     if (s.agenda) h += block("Likely on the agenda", s.agenda, null, "");
     if (s.buildoff) h += block("Build off it", s.buildoff, null, "");
+    if (s.questions && s.questions.length) {
+      h += '<div class="block asks"><div class="lab">Three to ask</div><ol class="asks-list">' +
+        s.questions.map(function (q) { return '<li>' + q + '</li>'; }).join("") + '</ol></div>';
+    }
     h += '<div class="block notes"><div class="lab">My notes</div>' +
       '<textarea class="note-input" data-key="' + esc(noteKey) + '" placeholder="Jot what you want to build off — saved on this device."></textarea>' +
       '<div class="note-hint">Private to this device<span class="saved">· saved</span></div></div>';
