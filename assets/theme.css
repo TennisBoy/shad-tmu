@@ -169,6 +169,20 @@ details.more[open]>summary::after{transform:rotate(90deg)}
 
 .foot{margin-top:40px;text-align:center;color:var(--settled);font-size:.78rem}
 
+/* ---------- contribute block (fixed, bottom-right, collapsible) ---------- */
+.contribute{position:fixed;right:14px;bottom:14px;z-index:30;max-width:242px;background:var(--card-solid);border:1px solid var(--line);border-radius:13px;padding:12px 14px;box-shadow:0 6px 22px rgba(0,40,90,.16)}
+.contribute.collapsed{padding:0;border:0;background:transparent;box-shadow:none}
+.contribute-lab{font-size:.62rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--tmu-blue);display:block;margin-bottom:5px;padding-right:14px}
+.contribute p{margin:0 0 9px;color:var(--muted);font-size:.78rem;line-height:1.45}
+.contribute>a{display:inline-block;font-weight:700;color:var(--tmu-blue);text-decoration:none;word-break:break-all;font-size:.72rem;background:rgba(0,76,155,.06);padding:6px 11px;border-radius:999px}
+.contribute>a:hover{background:rgba(0,76,155,.11)}
+.contribute-close{position:absolute;top:5px;right:7px;border:0;background:transparent;color:var(--settled);font-size:1.15rem;line-height:1;cursor:pointer;padding:2px 5px;border-radius:6px}
+.contribute-close:hover{color:var(--tmu-blue)}
+.contribute-pill{font-family:inherit;font-weight:800;font-size:.74rem;letter-spacing:.03em;color:var(--tmu-blue);cursor:pointer;border:1px solid var(--line);background:var(--card-solid);padding:8px 14px;border-radius:999px;box-shadow:0 4px 14px rgba(0,40,90,.14)}
+.contribute-pill:hover{background:rgba(0,76,155,.06)}
+.contribute-close:focus-visible,.contribute-pill:focus-visible,.contribute>a:focus-visible{outline:2px solid var(--tmu-blue);outline-offset:2px}
+@media(max-width:420px){.contribute{max-width:min(242px,72vw)}}
+
 @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 .card:nth-child(2){animation-delay:.05s}.card:nth-child(3){animation-delay:.1s}.card:nth-child(4){animation-delay:.15s}

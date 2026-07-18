@@ -480,6 +480,37 @@
     }
   };
 
+  /* ---------- contribute / "email me more notes" block ---------- */
+  function mountContribute() {
+    var KEY = "shad:contribute-open";
+    var store; try { store = window.localStorage; } catch (e) { store = null; }
+    var wrap = document.createElement("div");
+    wrap.className = "contribute";
+    var saved; try { saved = store ? store.getItem(KEY) : null; } catch (e) { saved = null; }
+    var open = saved !== "0"; // default open; collapses to a pill once dismissed
+    function render() {
+      if (open) {
+        wrap.classList.remove("collapsed");
+        wrap.innerHTML =
+          '<button class="contribute-close" aria-label="Collapse this note">×</button>' +
+          '<span class="contribute-lab">Got a note to add?</span>' +
+          '<p>Spotted something I missed, or have better notes? Email me and I\'ll add them to the site — with credit to you.</p>' +
+          '<a href="mailto:william.yin@torontometropolitan.shad.ca">✉ william.yin@torontometropolitan.shad.ca</a>';
+        wrap.querySelector(".contribute-close").addEventListener("click", function () {
+          open = false; try { if (store) store.setItem(KEY, "0"); } catch (e) {} render();
+        });
+      } else {
+        wrap.classList.add("collapsed");
+        wrap.innerHTML = '<button class="contribute-pill" aria-label="Suggest a note to add">✉ Add a note</button>';
+        wrap.querySelector(".contribute-pill").addEventListener("click", function () {
+          open = true; try { if (store) store.setItem(KEY, "1"); } catch (e) {} render();
+        });
+      }
+    }
+    render();
+    document.body.appendChild(wrap);
+  }
+
   /* ---------- analytics ---------- */
   if (SHAD.ga_id) {
     var g = document.createElement("script");
@@ -497,4 +528,5 @@
     var q = param("date");
     renderDay(q && /^\d{4}-\d{2}-\d{2}$/.test(q) && SHAD.days[q] ? q : TODAY);
   }
+  mountContribute();
 })();
