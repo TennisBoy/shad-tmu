@@ -4,7 +4,7 @@
 
 window.SHAD = {
   tz: "America/Toronto",
-  ga_id: "",                       // ← paste GA4 id "G-XXXXXXXXXX" to turn analytics on
+  ga_id: "G-ZS4PF08NN3",           // GA4 Measurement ID — empty string disables analytics
   program: { start: "2026-07-06", end: "2026-07-19" },  // Weeks 1–2 (more weeks appended as they arrive)
 
   days: {
