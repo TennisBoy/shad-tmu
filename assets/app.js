@@ -59,7 +59,7 @@
     var h = '<div class="block ' + (extraClass || "") + '"><div class="lab">' + esc(lab) +
       (badge ? ' <span class="badge">' + esc(badge) + '</span>' : "") + '</div>';
     if (gist) h += '<p class="gist">' + gist + '</p>';
-    if (full) h += '<details class="more"><summary>' + (extraClass === "prep" ? "Open the primer" : "Full profile") +
+    if (full) h += '<details class="more"><summary>' + (extraClass === "prep" ? "Go deeper" : "Full profile") +
       '</summary><div class="more-body">' + full + '</div></details>';
     if (footer) h += footer;
     return h + '</div>';
