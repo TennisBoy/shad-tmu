@@ -4,7 +4,7 @@
 
 window.SHAD = {
   tz: "America/Toronto",
-  ga_id: "G-N4EHLWPS2F",           // GA4 Measurement ID — empty string disables analytics
+  ga_id: "G-N4EHLWPS2F",           // GA4 Measurement ID; gtag/js?id=<id> must return 200. Empty string disables analytics.
   program: { start: "2026-07-06", end: "2026-07-19" },  // Weeks 1–2 (more weeks appended as they arrive)
 
   days: {

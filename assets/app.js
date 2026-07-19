@@ -16,7 +16,7 @@
   function fmtDate(iso, opts) {
     // noon UTC so the calendar date never shifts across timezones
     var d = new Date(iso + "T12:00:00Z");
-    return new Intl.DateTimeFormat("en-US", Object.assign({ timeZone: "UTC" }, opts)).format(d);
+    return new Intl.DateTimeFormat("en-CA", Object.assign({ timeZone: "UTC" }, opts)).format(d);
   }
   var TODAY = todayISO();
 
@@ -264,7 +264,7 @@
         '<p class="illus-note">Illustrative — real machines lose some of this to noise/error. ~300 qubits would exceed the number of atoms in the observable universe.</p></div>';
       var nEl = mount.querySelector("#qp-n");
       function fmt(n) {
-        if (n <= 50) return Math.pow(2, n).toLocaleString("en-US");
+        if (n <= 50) return Math.pow(2, n).toLocaleString("en-CA");
         var log10 = n * Math.LN2 / Math.LN10, exp = Math.floor(log10);
         return (Math.pow(10, log10 - exp)).toFixed(1) + " × 10^" + exp;
       }
@@ -398,7 +398,7 @@
         '<p style="margin:12px 0 0;font-size:.95rem" id="cg-out"></p>' +
         '<p class="illus-note">Illustrative — 7%/yr compounded monthly. Real markets swing; nothing is guaranteed.</p></div>';
       var pmtEl = mount.querySelector("#cg-pmt"), yrsEl = mount.querySelector("#cg-yrs");
-      var money = function (n) { return "$" + Math.round(n).toLocaleString("en-US"); };
+      var money = function (n) { return "$" + Math.round(n).toLocaleString("en-CA"); };
       function fv(pmt, months) { var r = 0.07 / 12; return r === 0 ? pmt * months : pmt * ((Math.pow(1 + r, months) - 1) / r); }
       function chart(pmt, years) {
         var W = 240, H = 140, x0 = 30, x1 = 230, y0 = 122, y1 = 14;
@@ -445,7 +445,7 @@
         '<p style="margin:12px 0 0;font-size:.95rem" id="be-out"></p>' +
         '<p class="illus-note">Simplified — real costs are messier, but the crossover logic holds.</p></div>';
       var fcEl = mount.querySelector("#be-fc"), pEl = mount.querySelector("#be-p"), cEl = mount.querySelector("#be-c");
-      var money = function (n) { return "$" + Math.round(n).toLocaleString("en-US"); };
+      var money = function (n) { return "$" + Math.round(n).toLocaleString("en-CA"); };
       function chart(fc, p, c, be) {
         var x0 = 30, x1 = 230, y0 = 122, y1 = 14;
         var xmax = isFinite(be) ? Math.max(be * 2, 10) : Math.max((fc / Math.max(p, 1)) * 2, 10);
@@ -471,7 +471,7 @@
         mount.querySelector("#be-chart").innerHTML = chart(fc, p, c, be);
         mount.querySelector("#be-out").innerHTML = margin <= 0
           ? 'At <b>' + money(p) + '</b> price and <b>' + money(c) + '</b> cost you <b style="color:#b23">lose ' + money(c - p) + ' on every unit</b> — there is no break-even. Raise the price or cut the cost.'
-          : 'You break even at <b style="color:#004c9b">' + Math.ceil(be).toLocaleString("en-US") + ' units</b>. Below that you\'re in the red; above it, each extra unit earns <b>' + money(margin) + '</b> profit.';
+          : 'You break even at <b style="color:#004c9b">' + Math.ceil(be).toLocaleString("en-CA") + ' units</b>. Below that you\'re in the red; above it, each extra unit earns <b>' + money(margin) + '</b> profit.';
       }
       fcEl.addEventListener("input", update);
       pEl.addEventListener("input", update);
