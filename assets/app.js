@@ -1,4 +1,4 @@
-/* SHAD @ TMU — all behaviour. One copy; both pages load it.
+/* SHAD @ TMU, all behaviour. One copy; both pages load it.
    index.html  -> <body data-view="today">     timeline.html -> <body data-view="timeline"> */
 (function () {
   "use strict";
@@ -94,7 +94,7 @@
         s.questions.map(function (q) { return '<li>' + q + '</li>'; }).join("") + '</ol></div>';
     }
     h += '<div class="block notes"><div class="lab">My notes</div>' +
-      '<textarea class="note-input" data-key="' + esc(noteKey) + '" placeholder="Jot what you want to build off — saved on this device."></textarea>' +
+      '<textarea class="note-input" data-key="' + esc(noteKey) + '" placeholder="Jot what you want to build off. Saved on this device."></textarea>' +
       '<div class="note-hint">Private to this device<span class="saved">· saved</span></div></div>';
     h += '</div></article>';
     return h;
@@ -133,9 +133,9 @@
     var html = header() + '<div class="wrap"><section><header class="hero">' + eyebrow;
 
     if (!day || !day.sessions || !day.sessions.length) {
-      var msg = "No sessions scheduled" + (isToday ? " today — enjoy the breather." : ".");
+      var msg = "No sessions scheduled" + (isToday ? " today. Enjoy the breather." : ".");
       if (target < SHAD.program.start) msg = "SHAD starts " + fmtDate(SHAD.program.start, { weekday: "long", month: "long", day: "numeric" }) + ".";
-      else if (target > SHAD.program.end) msg = "Beyond the current schedule — new weeks land here as they're released.";
+      else if (target > SHAD.program.end) msg = "Beyond the current schedule. New weeks land here as they're released.";
       html += '<h1>' + (day ? esc(day.headline || "SHAD @ TMU") : "SHAD @ TMU") + '</h1>' + dayNav(target) + '</header>';
       if (day) html += paStrip(day);
       html += '<div class="empty-day"><h2>No sessions</h2><p>' + msg + '</p></div>';
@@ -202,7 +202,7 @@
     var meta = sessions.length ? (sessions.length + (sessions.length === 1 ? " session" : " sessions")) : "no sessions";
     var detail = '<div class="day-detail"><ul>' +
       (sessions.length ? sessions.map(function (s) {
-        return '<li><b>' + esc(s.display_time.replace(/\s?(AM|PM)$/i, "")) + '</b> · ' + esc(s.title) + (s.speaker ? " — " + esc(s.speaker) : "") + '</li>';
+        return '<li><b>' + esc(s.display_time.replace(/\s?(AM|PM)$/i, "")) + '</b> · ' + esc(s.title) + (s.speaker ? ", " + esc(s.speaker) : "") + '</li>';
       }).join("") : '<li>Free / travel day.</li>') + '</ul>';
     var pa = day.pa_duty || {};
     if ((pa.room_checks && pa.room_checks.length) || (pa.off && pa.off.length)) {
@@ -257,11 +257,11 @@
     "qubit-power": function (mount) {
       mount.innerHTML =
         '<div class="widget"><h4>Why qubits get powerful fast</h4>' +
-        '<p class="sub">Each extra qubit <b>doubles</b> the number of states the machine can hold at once — that\'s 2ⁿ. On the log scale below, that explosion is a straight line.</p>' +
+        '<p class="sub">Each extra qubit <b>doubles</b> the number of states the machine can hold at once. That\'s 2ⁿ. On the log scale below, that explosion is a straight line.</p>' +
         '<div id="qp-chart"></div>' +
         '<div class="slider-row"><label for="qp-n">Qubits</label><input id="qp-n" type="range" min="1" max="50" step="1" value="20"><span class="readout" id="qp-nv">20</span></div>' +
         '<p style="margin:12px 0 0;font-size:.95rem" id="qp-out"></p>' +
-        '<p class="illus-note">Illustrative — real machines lose some of this to noise/error. ~300 qubits would exceed the number of atoms in the observable universe.</p></div>';
+        '<p class="illus-note">Illustrative, real machines lose some of this to noise/error. ~300 qubits would exceed the number of atoms in the observable universe.</p></div>';
       var nEl = mount.querySelector("#qp-n");
       function fmt(n) {
         if (n <= 50) return Math.pow(2, n).toLocaleString("en-CA");
@@ -296,12 +296,12 @@
     "pe-valuation": function (mount) {
       mount.innerHTML =
         '<div class="widget"><h4>How the multiple sets the price</h4>' +
-        '<p class="sub">Valuation = annual profit × the P/E multiple. Same profit, a different multiple, a wildly different price — drag both and watch the gold dot.</p>' +
+        '<p class="sub">Valuation = annual profit × the P/E multiple. Same profit, a different multiple, a wildly different price. Drag both and watch the gold dot.</p>' +
         '<div id="pe-chart"></div>' +
         '<div class="slider-row"><label for="pe-e">Annual profit</label><input id="pe-e" type="range" min="50000" max="2000000" step="50000" value="500000"><span class="readout" id="pe-ev">$500k</span></div>' +
         '<div class="slider-row"><label for="pe-m">P/E multiple</label><input id="pe-m" type="range" min="1" max="40" step="1" value="12"><span class="readout" id="pe-mv">12×</span></div>' +
         '<p style="margin:12px 0 0;font-size:.95rem" id="pe-out"></p>' +
-        '<p class="illus-note">Illustrative — real multiples depend on growth, risk and sector.</p></div>';
+        '<p class="illus-note">Illustrative, real multiples depend on growth, risk and sector.</p></div>';
       var eEl = mount.querySelector("#pe-e"), mEl = mount.querySelector("#pe-m");
       var money = function (n) { n = Math.round(n); var a = Math.abs(n); if (a >= 1e6) return "$" + (n / 1e6).toFixed(1) + "M"; if (a >= 1e3) return "$" + Math.round(n / 1e3) + "k"; return "$" + n; };
       var PEMAX = 40;
@@ -352,9 +352,9 @@
       svg += '</svg>';
       mount.innerHTML =
         '<div class="widget"><h4>The sales cycle is a funnel</h4>' +
-        '<p class="sub">Every step qualifies harder than the last, so the numbers fall away fast — you spend your energy only where a deal can still happen.</p>' +
+        '<p class="sub">Every step qualifies harder than the last, so the numbers fall away fast. You spend your energy only where a deal can still happen.</p>' +
         svg +
-        '<p class="illus-note">Illustrative drop-off — real rates vary, but the shape always narrows.</p></div>';
+        '<p class="illus-note">Illustrative drop-off, real rates vary, but the shape always narrows.</p></div>';
     },
 
     "venture-lifecycle": function (mount) {
@@ -378,14 +378,14 @@
         '</svg>';
       mount.innerHTML =
         '<div class="widget"><h4>The venture lifecycle, in one picture</h4>' +
-        '<p class="sub"><b style="color:#004c9b">Growth</b> climbs in steps, <b style="color:#b23a3a">risk</b> falls as you prove the model, and <b style="color:#1f8a5b">EBITDA</b> (profit) dips negative before crossing zero — the gold dot — about halfway through the market stage.</p>' +
+        '<p class="sub"><b style="color:#004c9b">Growth</b> climbs in steps, <b style="color:#b23a3a">risk</b> falls as you prove the model, and <b style="color:#1f8a5b">EBITDA</b> (profit) dips negative before crossing zero. The gold dot is about halfway through the market stage.</p>' +
         svg +
         '<div style="display:flex;gap:16px;flex-wrap:wrap;font-size:.8rem;color:#5b6675;margin-top:6px">' +
           '<span><b style="color:#004c9b">━</b> growth (staircase)</span>' +
           '<span><b style="color:#b23a3a">╍</b> risk</span>' +
           '<span><b style="color:#1f8a5b">━</b> EBITDA / profit</span>' +
         '</div>' +
-        '<p class="illus-note">Illustrative — the shape, not exact numbers. Real timelines vary.</p></div>';
+        '<p class="illus-note">Illustrative, the shape, not exact numbers. Real timelines vary.</p></div>';
     },
 
     "compound-growth": function (mount) {
@@ -396,7 +396,7 @@
         '<div class="slider-row"><label for="cg-pmt">Monthly</label><input id="cg-pmt" type="range" min="0" max="500" step="10" value="100"><span class="readout" id="cg-pmtv">$100</span></div>' +
         '<div class="slider-row"><label for="cg-yrs">Years</label><input id="cg-yrs" type="range" min="1" max="50" step="1" value="20"><span class="readout" id="cg-yrsv">20</span></div>' +
         '<p style="margin:12px 0 0;font-size:.95rem" id="cg-out"></p>' +
-        '<p class="illus-note">Illustrative — 7%/yr compounded monthly. Real markets swing; nothing is guaranteed.</p></div>';
+        '<p class="illus-note">Illustrative, 7%/yr compounded monthly. Real markets swing; nothing is guaranteed.</p></div>';
       var pmtEl = mount.querySelector("#cg-pmt"), yrsEl = mount.querySelector("#cg-yrs");
       var money = function (n) { return "$" + Math.round(n).toLocaleString("en-CA"); };
       function fv(pmt, months) { var r = 0.07 / 12; return r === 0 ? pmt * months : pmt * ((Math.pow(1 + r, months) - 1) / r); }
@@ -443,7 +443,7 @@
         '<div class="slider-row"><label for="be-p">Price / unit</label><input id="be-p" type="range" min="1" max="50" step="1" value="12"><span class="readout" id="be-pv">$12</span></div>' +
         '<div class="slider-row"><label for="be-c">Cost / unit</label><input id="be-c" type="range" min="0" max="40" step="1" value="4"><span class="readout" id="be-cv">$4</span></div>' +
         '<p style="margin:12px 0 0;font-size:.95rem" id="be-out"></p>' +
-        '<p class="illus-note">Simplified — real costs are messier, but the crossover logic holds.</p></div>';
+        '<p class="illus-note">Simplified, real costs are messier, but the crossover logic holds.</p></div>';
       var fcEl = mount.querySelector("#be-fc"), pEl = mount.querySelector("#be-p"), cEl = mount.querySelector("#be-c");
       var money = function (n) { return "$" + Math.round(n).toLocaleString("en-CA"); };
       function chart(fc, p, c, be) {
@@ -470,7 +470,7 @@
         var be = margin > 0 ? fc / margin : Infinity;
         mount.querySelector("#be-chart").innerHTML = chart(fc, p, c, be);
         mount.querySelector("#be-out").innerHTML = margin <= 0
-          ? 'At <b>' + money(p) + '</b> price and <b>' + money(c) + '</b> cost you <b style="color:#b23">lose ' + money(c - p) + ' on every unit</b> — there is no break-even. Raise the price or cut the cost.'
+          ? 'At <b>' + money(p) + '</b> price and <b>' + money(c) + '</b> cost you <b style="color:#b23">lose ' + money(c - p) + ' on every unit</b>. There is no break-even. Raise the price or cut the cost.'
           : 'You break even at <b style="color:#004c9b">' + Math.ceil(be).toLocaleString("en-CA") + ' units</b>. Below that you\'re in the red; above it, each extra unit earns <b>' + money(margin) + '</b> profit.';
       }
       fcEl.addEventListener("input", update);

@@ -1,6 +1,6 @@
-# SHAD @ TMU — schedule site (agent instructions)
+# SHAD @ TMU, schedule site (agent instructions)
 
-> Self-contained project — this is its own git repo (extracted from William's wiki on 2026-07-09).
+> Self-contained project, this is its own git repo (extracted from William's wiki on 2026-07-09).
 > The app lives at the repo root. Do not add outside dependencies.
 
 A **focus-on-today** schedule site for William's SHAD month at Toronto Metropolitan University
@@ -14,16 +14,16 @@ line in a calendar.
 CLAUDE.md                 this file
 README.md                 human guide
 staticwebapp.config.json  cache headers + routing for Azure SWA
-index.html                TODAY (home) — thin shell, ~15 lines
-timeline.html             PAST + FUTURE — thin shell
+index.html                TODAY (home), thin shell, ~15 lines
+timeline.html             PAST + FUTURE, thin shell
 assets/
   theme.css               all styling: house gradient + TMU palette + layout (ONE copy)
-  data.js                 window.SHAD — the whole dataset (ONE copy, both pages read it)
+  data.js                 window.SHAD, the whole dataset (ONE copy, both pages read it)
   app.js                  all logic: render, header, today-in-Toronto, expanders, widgets, GA
 ```
 
 Both HTML files are near-empty shells. **All content lives in `data.js`; all behaviour in
-`app.js`; all styling in `theme.css`.** There is exactly one copy of each — the two pages cannot
+`app.js`; all styling in `theme.css`.** There is exactly one copy of each, the two pages cannot
 drift or desync.
 
 ## Data model (`assets/data.js`)
@@ -58,18 +58,18 @@ Session object:
   kind: "keynote|alum-talk|workshop|panel|field-trip",   // sets the card accent + label
   title: "Machines that move like muscle",
   speaker: "Dr. Amara Okonkwo",
-  role: "Director, Biomechatronics Lab — University of Toronto",
+  role: "Director, Biomechatronics Lab, University of Toronto",
   speaker_gist: "1–2 sentences, ALWAYS visible",
-  speaker_full: "HTML string — expandable full profile (optional)",
+  speaker_full: "HTML string, expandable full profile (optional)",
   primer_gist:  "1–2 sentences of the ACTUAL info, ALWAYS visible",
-  primer_full:  "HTML string — deep primer (optional)",
-  widget: null,    // or a key in app.js WIDGETS, e.g. 'soft-muscle' — mounted inside primer_full
+  primer_full:  "HTML string, deep primer (optional)",
+  widget: null,    // or a key in app.js WIDGETS, e.g. 'soft-muscle', mounted inside primer_full
   agenda:   "short, always visible",
   buildoff: "short, always visible"
 }
 ```
 
-## Authoring doctrine (how to write cards) — non-negotiable
+## Authoring doctrine (how to write cards), non-negotiable
 
 1. **Primer = the actual information, not a to-do list.** Do the ≤1-day of research yourself and
    hand over the *result*. Reading the box IS being prepared. Never write "go read X."
@@ -77,7 +77,7 @@ Session object:
    `speaker_full` / `primer_full` are the tap-to-expand depth. Lazy readers get the brief; curious
    readers click.
 3. **Only Speaker + Primer expand.** Agenda + Build-off stay short and always visible. Don't make
-   all four expandable — it's fatiguing.
+   all four expandable, it's fatiguing.
 4. **Earned visuals only ("if applicable").** Add a `widget` / diagram / graph ONLY where it truly
    teaches (physics, robotics, econ, algorithms). A story-driven talk gets great text, no forced
    chart. Tiered: every session gets text; only some get a visual.
@@ -91,7 +91,7 @@ Session object:
 ## "Today" is Toronto time
 
 `app.js` computes today via `Intl.DateTimeFormat('en-CA',{timeZone:'America/Toronto'})`. Never use
-the viewer's local date — a peer in another timezone must still see the correct SHAD day.
+the viewer's local date, a peer in another timezone must still see the correct SHAD day.
 
 ## Deploy
 
@@ -103,6 +103,6 @@ the viewer's local date — a peer in another timezone must still see the correc
 
 ## House style
 
-Committed **light** theme (no dark mode — deliberate). Ground = house gradient `#ffffff → #fffbe6`,
+Committed **light** theme (no dark mode, deliberate). Ground = house gradient `#ffffff → #fffbe6`,
 150° fixed. **TMU Blue `#004c9b`** for structure/labels; **TMU Gold `#ffdc00`** spent in one place
 (the "today" marker + active states). Blue-biased near-black `#0f1b2d` for text. Mobile-first.
