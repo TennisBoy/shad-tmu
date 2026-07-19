@@ -540,10 +540,10 @@ window.SHAD = {
       ]
     },
 
-    /* ===================== SUNDAY — art, football, last night ===================== */
+    /* ===================== SUNDAY — art, soccer, last night ===================== */
     "2026-07-19": {
       week: 2,
-      headline: "Art, football, and a last big night.",
+      headline: "Art, soccer, and a last big night.",
       pa_duty: {
         room_checks: [ {floor:"6",pa:"Raquel"}, {floor:"7",pa:"Fatimah"}, {floor:"8",pa:"Niksha"} ],
         off: [ {pa:"Ayesha", when:"off (Faiqa covers)"}, {pa:"Fadumo", when:"off (Niksha covers)"}, {pa:"Rishaan", when:"off (Michela covers)"}, {pa:"Jenn", when:"morning off"} ]
@@ -553,7 +553,7 @@ window.SHAD = {
           primer_gist:"A visit to the AGO — one of North America's largest art museums, 120,000+ works from Indigenous and Canadian art to European masters, behind a landmark Frank Gehry facade.",
           primer_full:`<p>The <b>Art Gallery of Ontario</b> is one of the largest art museums in North America, with a collection of more than <b>120,000 works</b> — strong in Indigenous and Canadian art (including the Group of Seven) alongside European masterpieces. Its 2008 wood-and-glass facade was designed by Toronto-born architect <b>Frank Gehry</b>. Give yourself time; it's big.</p>` },
         { display_time:"3:00 PM", kind:"social", title:"World Cup Watch Party", location:"On campus",
-          primer_gist:"Gather to watch the football — snacks, rivalries and cheering, with the World Cup on home soil this summer. Wear your colours." },
+          primer_gist:"Gather to watch soccer — snacks, rivalries and cheering, with the World Cup on home soil this summer. Wear your colours." },
         { display_time:"7:30 PM", kind:"social", title:"Trivia Night", location:"DCC 350/352",
           primer_gist:"A trivia showdown to close the week — bring your random knowledge and your house team." }
       ]
