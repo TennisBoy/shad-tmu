@@ -254,6 +254,41 @@
 
   /* ---------- widget registry ---------- */
   var WIDGETS = {
+    "calibration-curve": function (mount) {
+      mount.innerHTML =
+        '<div class="widget"><h4>Read an unknown off a calibration curve</h4>' +
+        '<p class="sub">Beer–Lambert says absorbance is proportional to concentration: <b>A = ε l c</b>. Measure a few <em>known</em> standards, plot A vs. concentration, and you get a straight line. Then any unknown’s absorbance points straight back to its concentration.</p>' +
+        '<div id="cc-chart"></div>' +
+        '<div class="slider-row"><label for="cc-a">Unknown’s absorbance A</label><input id="cc-a" type="range" min="0.05" max="0.95" step="0.01" value="0.60"><span class="readout" id="cc-av">0.60</span></div>' +
+        '<p style="margin:12px 0 0;font-size:.95rem" id="cc-out"></p>' +
+        '<p class="illus-note">Illustrative line (slope 0.10 per mg/L). The straight-line rule only holds while A is small (roughly A ≲ 1); very concentrated samples bend off it.</p></div>';
+      var aEl = mount.querySelector("#cc-a");
+      var SLOPE = 0.10, CMAX = 10, AMAX = 1.0;
+      function chart(A) {
+        var x0 = 32, x1 = 228, y0 = 118, y1 = 14;
+        var c = A / SLOPE;
+        var sx = function (cc) { return (x0 + (x1 - x0) * (cc / CMAX)).toFixed(1); };
+        var sy = function (aa) { return (y0 - (y0 - y1) * (aa / AMAX)).toFixed(1); };
+        return '<svg viewBox="0 0 240 140" width="100%" height="130" role="img" aria-label="Calibration line of absorbance versus concentration; the unknown absorbance maps to its concentration">' +
+          '<line x1="' + x0 + '" y1="' + y1 + '" x2="' + x0 + '" y2="' + y0 + '" stroke="rgba(0,76,155,.14)"/>' +
+          '<line x1="' + x0 + '" y1="' + y0 + '" x2="' + x1 + '" y2="' + y0 + '" stroke="rgba(0,76,155,.14)"/>' +
+          '<polyline points="' + sx(0) + ',' + sy(0) + ' ' + sx(CMAX) + ',' + sy(SLOPE * CMAX) + '" fill="none" stroke="#004c9b" stroke-width="2.6" stroke-linecap="round"/>' +
+          '<line x1="' + x0 + '" y1="' + sy(A) + '" x2="' + sx(c) + '" y2="' + sy(A) + '" stroke="#9aa4b2" stroke-width="1" stroke-dasharray="3 3"/>' +
+          '<line x1="' + sx(c) + '" y1="' + sy(A) + '" x2="' + sx(c) + '" y2="' + y0 + '" stroke="#9aa4b2" stroke-width="1" stroke-dasharray="3 3"/>' +
+          '<circle cx="' + sx(c) + '" cy="' + sy(A) + '" r="5" fill="#ffdc00" stroke="#003a75" stroke-width="1.5"/>' +
+          '<text x="' + x0 + '" y="10" font-size="8" fill="#5b6675">absorbance A</text>' +
+          '<text x="130" y="136" text-anchor="middle" font-size="10" fill="#5b6675">concentration (mg/L) →</text></svg>';
+      }
+      function update() {
+        var A = +aEl.value, c = A / SLOPE;
+        mount.querySelector("#cc-av").textContent = A.toFixed(2);
+        mount.querySelector("#cc-chart").innerHTML = chart(A);
+        mount.querySelector("#cc-out").innerHTML =
+          "Measured <b>A = " + A.toFixed(2) + "</b> → follow it across to the line, then down: <b>c = " + c.toFixed(1) + " mg/L</b>. (Because A = 0.10 × c here, c = A ÷ 0.10.)";
+      }
+      aEl.addEventListener("input", update);
+      update();
+    },
     "qubit-power": function (mount) {
       mount.innerHTML =
         '<div class="widget"><h4>Why qubits get powerful fast</h4>' +

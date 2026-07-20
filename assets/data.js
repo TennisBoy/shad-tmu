@@ -5,7 +5,7 @@
 window.SHAD = {
   tz: "America/Toronto",
   ga_id: "G-N4EHLWPS2F",           // GA4 Measurement ID; gtag/js?id=<id> must return 200. Empty string disables analytics.
-  program: { start: "2026-07-06", end: "2026-07-19" },  // Weeks 1–2 (more weeks appended as they arrive)
+  program: { start: "2026-07-06", end: "2026-07-26" },  // Weeks 1–3 (more weeks appended as they arrive)
 
   days: {
 
@@ -556,6 +556,219 @@ window.SHAD = {
           primer_gist:"Gather to watch soccer: snacks, rivalries and cheering, with the World Cup on home soil this summer. Wear your colours." },
         { display_time:"7:30 PM", kind:"social", title:"Trivia Night", location:"DCC 350/352",
           primer_gist:"A trivia showdown to close the week, bring your random knowledge and your house team." }
+      ]
+    },
+
+    /* ===================== MONDAY, week 3 opens ===================== */
+    "2026-07-20": {
+      week: 3,
+      headline: "Week three opens: how research is done, how tech hooks us, and art that argues back.",
+      pa_duty: {
+        room_checks: [],
+        off: [ {pa:"Faiqa", when:"all day"}, {pa:"Joseph", when:"all day"}, {pa:"Fatimah", when:"all day"}, {pa:"Niya", when:"all day"} ]
+      },
+      sessions: [
+        { display_time:"9:00 AM", kind:"social", title:"PA Workshop", speaker:"Joella Lin", location:"DCC 350/352",
+          primer_gist:"A peer-led (PA) workshop to open the week. The topic is set by your PA on the day, come ready to jump in." },
+        { display_time:"10:00 AM", kind:"workshop", title:"Psych Research Workshop", speaker:"Mary Kate Schilke & Shreeyaa Ramana", role:"TMU psychology graduate students", location:"DCC 350/352",
+          speaker_gist:"Two TMU graduate students in psychology, here to walk you through how real studies are actually run.",
+          primer_gist:"The whole research process end to end: how a question becomes a study, how data is collected and analyzed, and how findings get used.",
+          primer_full:`<p>A study isn't "have an opinion, find data to back it." It's a disciplined pipeline, and psychology is a good place to see it because its subject, people, is messy and easy to fool yourself about.</p><p><b>1. Question → hypothesis.</b> Start with a clear question, then sharpen it into a <b>testable, falsifiable prediction</b>, one that could be proven wrong (e.g. "more sleep improves memory recall"). Scientists often set it against a <b>null hypothesis</b> (there is <em>no</em> effect) and try to rule that out.</p><p><b>2. Operationalize.</b> Turn fuzzy ideas into things you can actually measure. "Stress" becomes, say, a cortisol level or a validated questionnaire score. Good <em>operational definitions</em> are exactly what let someone else <b>replicate</b> your study.</p><p><b>3. Name the variables.</b> The <b>independent variable (IV)</b> is what you change or group by (the suspected cause); the <b>dependent variable (DV)</b> is what you measure (the suspected effect). A <b>confounding variable</b> is a lurking third factor that could secretly explain your result, the thing good design has to rule out.</p><p><b>4. Pick a design, this is the big fork:</b></p><ul><li><b>Experimental</b>, you actively manipulate the IV and use <b>random assignment</b> to put people into conditions (often with a <em>control group</em>). This is the <em>only</em> design that lets you claim <b>causation</b>, because randomizing scatters the confounds evenly.</li><li><b>Correlational / observational</b>, you measure things as they naturally occur (surveys, observation, case studies). You can find a real <b>association</b> and its strength, but <b>correlation ≠ causation</b>: you can't tell which way the arrow points, or whether a third thing drives both.</li></ul><p><b>5. Sample.</b> You can't test everyone, so you draw a <b>sample</b> from a <b>population</b>. <em>Random</em> sampling makes the sample representative so results <b>generalize</b>; a convenience sample (whoever's handy) is common but limits how far you can push the conclusion. Bigger samples are more reliable.</p><p><b>6. Analyze.</b> <b>Descriptive</b> statistics summarize what you found (mean, median, standard deviation, graphs). <b>Inferential</b> statistics ask whether it would likely hold beyond your sample (t-tests, ANOVA, regression). <b>Statistical significance</b> (the famous <em>p</em> &lt; .05) estimates the chance the result is a fluke, but "significant" doesn't mean "big" or "important", that's why researchers now also report <b>effect size</b>.</p><p><b>7. Ethics, non-negotiable.</b> In Canada, human research runs under the <b>Tri-Council Policy Statement (TCPS 2)</b> and must be approved by a <b>Research Ethics Board (REB)</b> before it starts. Core rules: <em>informed consent</em>, voluntary participation with the right to withdraw, confidentiality, minimizing harm, and debriefing afterward.</p><p><b>8. Interpret and apply.</b> Draw conclusions the data actually support, state your <b>limitations</b> honestly, and expect to be <b>replicated</b>. Then it feeds real decisions, clinical practice, education, policy, even app/UX design, and spawns the next question.</p>`,
+          buildoff:"You're running your own SHAD project, this is the toolkit for making its 'research' real. Ask them the fastest way an amateur study fools itself.",
+          questions:[
+            "What's the single most common way a well-meaning study accidentally fools itself?",
+            "For our project, when is a quick survey enough and when do we actually need an experiment?",
+            "How do you tell a real effect from a p &lt; .05 fluke?"
+          ] },
+        { display_time:"1:30 PM", kind:"workshop", title:"Understanding Digital Technologies through Creative Practice", speaker:"Camille Intson", role:"Artist-scholar of technology, new media & performance; lecturer, TMU School of Performance", location:"DCC 350/352",
+          speaker_gist:"An award-winning artist and researcher who studies technology through art, and who has built work out of deepfakes, VR, and generative AI.",
+          speaker_full:`<p><b>Camille Intson</b> is an award-winning artist and scholar working at the intersection of technology, new media, and performance. She holds a <b>PhD from the University of Toronto's Faculty of Information</b> (funded by a SSHRC doctoral scholarship) and teaches as a lecturer in <b>TMU's School of Performance</b> (part of The Creative School); she also holds a teaching-stream appointment at U of T. Her research asks how contemporary performance and art reshape the way we understand the social, ethical, and political stakes of digital technology.</p><p><b>Work worth knowing (each is a "technology" turned into art):</b></p><ul><li><b>JANE</b>, an intermedial theatre piece probing the ethics of <em>deepfake</em> technology.</li><li><b>Bisexual Bedroom Imaginaries</b>, a <em>VR</em> exhibit of queer ephemera, using virtual space for embodied, archival storytelling.</li><li><b>Trans-Feminist-Queer Transformer</b>, a <em>generative-AI</em> language model she fine-tuned on queer and trans-feminist poetry and staged in live performance.</li></ul>`,
+          primer_gist:"The argument that making art is a way of *understanding* technology, not just illustrating it, worked through generative AI, deepfakes, and VR.",
+          primer_full:`<p>Her core claim: <b>creative practice is a way of <em>knowing</em> a technology.</b> A lab measures what a tool does; art can reveal what it <em>means</em>, who it serves, what it hides, what it makes possible or dangerous. Three concrete handles:</p><p><b>Generative AI is authored, not neutral.</b> When she fine-tunes a language model on a specific poetry corpus, the model starts "speaking" in that corpus's voice. That's a live demonstration of a hard ML fact: <b>a model's output reflects its training data.</b> "AI" isn't an objective oracle, it's a mirror of the values, gaps, and biases in what it was fed. Choosing the data <em>is</em> an authorial act.</p><p><b>Deepfakes break the link between seeing and believing.</b> Synthetic video that convincingly fakes a real person raises questions of <b>consent</b> (who agreed to appear?), <b>authenticity</b> (is this real?), and <b>evidentiary trust</b> (can video still be proof?). Her piece <em>JANE</em> uses theatre to sit inside those questions rather than just warn about them.</p><p><b>VR as a place, not a gadget.</b> Virtual reality can be an <em>embodied</em> medium, a space you inhabit to tell identity-based or archival stories that flat media can't hold.</p><p>The throughline for your SHAD project: the interesting questions about a technology are usually <b>social, ethical, and political</b>, not just "does it work?" Artists get at those by <em>using</em> the tech expressively and seeing what it exposes.</p>`,
+          buildoff:"Your project is about everyday goods and their lifecycle, a deeply human, values-laden problem. Ask her how making something (a prototype, a story, an object) teaches you things analysis alone misses.",
+          questions:[
+            "If a model just reflects its training data, who's responsible for what it says, the data, the trainer, or the user?",
+            "When video can be faked convincingly, what should replace 'I saw it' as proof?",
+            "How does building something teach you things that studying it never does?"
+          ] },
+        { display_time:"3:30 PM", kind:"workshop", title:"Technology and Addictions", speaker:"Dr. Andrew (Hyounsoo) Kim, with Jenna Vieira", role:"Tier-2 Canada Research Chair & Associate Professor of Psychology, TMU · PhD student, TMU", location:"DCC 350/352",
+          speaker_gist:"A TMU psychologist and Canada Research Chair who studies how addiction and mental illness overlap, with a PhD student from his lab who researches gambling and gaming harms.",
+          speaker_full:`<p><b>Dr. Andrew (Hyounsoo) Kim</b> is an Associate Professor of Psychology at TMU and a <b>Tier-2 Canada Research Chair</b> whose work centres on <b>concurrent disorders</b>, the co-occurrence of addiction and mental illness. He earned his PhD in Clinical Psychology at the University of Calgary, trained at the Royal Ottawa Mental Health Centre, and directs TMU's <b>Addictions & Mental Health (ADMH) Lab</b> (140+ papers; TMU's 2025 Early Career Research Excellence Award).</p><p><b>Jenna Vieira</b> is a Clinical Psychology PhD student at TMU and a former research coordinator in the ADMH Lab. She writes plain-language research summaries for Gambling Research Exchange Ontario (GREO) and studies sports/in-play betting, gambling harms, and problematic gaming.</p>`,
+          primer_gist:"Why a phone or a game can be genuinely addictive 'like a drug', the real science behind it, and where that comparison is a simplification.",
+          primer_full:`<p><b>Behavioural addiction is a real clinical category, not a figure of speech.</b> <em>Gambling Disorder</em> is listed in the psychiatric manual (DSM-5) right alongside substance addictions, and the World Health Organization recognizes <em>Gaming Disorder</em> in its ICD-11. That's the scientific basis for saying a behaviour, not just a chemical, can hook you.</p><p><b>Why it works on the brain.</b> Addictive apps, games, and gambling exploit <b>variable-ratio reinforcement</b>: rewards arrive on an <em>unpredictable</em> schedule (the next scroll, loot box, or bet <em>might</em> pay off). Unpredictable rewards drive the brain's <b>dopamine</b> reward-learning system harder than predictable ones do, the same circuitry implicated in drug addiction. <em>Honest caveat:</em> "exactly like heroin" is an overstatement, the reward pathways overlap, but the intensity and mechanism aren't identical. The comparison is a real family resemblance, not an equals sign.</p><p><b>It's usually coping, not weakness.</b> A theme in this lab's work: people often turn to gambling or gaming to <b>regulate emotion</b>, to escape stress, boredom, or low mood. Framing it as a maladaptive <em>coping strategy</em> (rather than a failure of willpower) is both more accurate and more useful for treatment.</p><p><b>Comorbidity is the point.</b> Addictions rarely travel alone, they co-occur with depression, anxiety, and trauma, sharing risk factors like emotion dysregulation and impulsivity. Kim's argument is that you have to treat the addiction <em>and</em> the mental-health condition <b>together</b>, not one at a time.</p>`,
+          buildoff:"Every 'engaging' product you'll ever design borrows from this playbook. Ask where the line is between good design and manipulation, it's the ethics question under your whole project.",
+          questions:[
+            "Where's the line between 'engaging' design and deliberately addictive design?",
+            "If a behaviour is coping, not weakness, what actually helps someone stop?",
+            "Is the 'phones are like drugs' claim science or scare, and how would you test it?"
+          ] },
+        { display_time:"7:00 PM", kind:"social", title:"PA Workshop: Cybersecurity", speaker:"Ayesha Junaid", location:"DCC 350/352",
+          primer_gist:"A peer-led evening workshop on staying safe online, a lighter warm-up to Tuesday's encryption session." },
+        { display_time:"8:30 PM", kind:"social", title:"Movie Night (Pajama)", location:"IMA 307",
+          primer_gist:"Pajamas-on movie night, snacks, blankets, and a break from the schedule. Come comfy." }
+      ]
+    },
+
+    /* ===================== TUESDAY, chemistry, gaming hub, codes ===================== */
+    "2026-07-21": {
+      week: 3,
+      headline: "Chemistry detective work, creativity in a gaming hub, and cracking codes.",
+      pa_duty: { room_checks: [], off: [] },
+      sessions: [
+        { display_time:"10:00 AM & 2:00 PM (Groups A&B)", kind:"workshop", title:"SciXchange Chemistry: the Mascot Mystery", speaker:"SciXchange", role:"TMU Faculty of Science outreach office", location:"On campus",
+          speaker_gist:"SciXchange is TMU's Faculty of Science outreach team, they run hands-on STEM labs for students; today, a chemistry whodunit.",
+          primer_gist:"Solve a fictional 'Mascot Mystery' by finding an unknown chemical's concentration using spectroscopy and a calibration curve, textbook analytical chemistry.",
+          primer_full:`<p>The trick behind the mystery is one of the most useful ideas in a chem lab: you can measure <b>how much</b> of a coloured chemical is in a solution just by shining light through it.</p><p><b>The law that makes it work, Beer–Lambert:</b></p><p style="text-align:center"><b>A = ε l c</b></p><p>where <b>A</b> is <em>absorbance</em> (how much light the sample soaks up, no units), <b>ε</b> ("epsilon") is how strongly this particular substance absorbs at the chosen colour of light, <b>l</b> is the path length the light travels through the sample (the width of the little cuvette, in cm), and <b>c</b> is the <b>concentration</b> you want. The key: ε and l don't change, so <b>absorbance is simply proportional to concentration.</b> Double the concentration, double the absorbance.</p><p><b>How you turn that into an answer, the calibration curve:</b></p><ol><li>Make several <b>standards</b>, solutions whose concentrations you already know.</li><li>Measure each one's absorbance in a <b>spectrophotometer</b> (it shines a single chosen wavelength through the sample and reports how much was absorbed). Use the wavelength the substance absorbs most strongly (λ<sub>max</sub>) for the clearest signal.</li><li>Plot <b>absorbance vs. concentration</b>. Because of Beer–Lambert, the points fall on a <b>straight line through the origin</b>.</li><li>Now measure your <b>unknown's</b> absorbance, find that height on the line, and read straight down to its concentration. (Same as solving c = A ÷ slope.)</li></ol><p><b>The catch worth knowing:</b> the straight-line rule only holds while absorbance is small (roughly A ≲ 1). Very concentrated, strongly-absorbing samples bend off the line, so you dilute them back into the reliable range first.</p>`,
+          widget:"calibration-curve",
+          agenda:"What absorbance is → Beer–Lambert (A = ε l c) → build a calibration line from known standards → read the unknown off it → solve the mystery.",
+          buildoff:"This is measurement by proxy, you never 'see' the concentration, you infer it from light. Ask where else that trick shows up (it's how a lot of real testing works).",
+          questions:[
+            "Why does the calibration line pass through the origin?",
+            "If your unknown reads off the top of the line, what do you do, and why?",
+            "What could make two samples of the same concentration read different absorbances?"
+          ] },
+        { display_time:"9:00 AM & 11:00 AM (Groups C&D)", kind:"field-trip", title:"Creative School Activation", role:"The Creative School, TMU", location:"80 Gould St (Red Bull Gaming Hub) → 125 Bond St (Heidelberg Centre)",
+          primer_gist:"A two-part morning inside The Creative School, TMU's media/design faculty: first the Red Bull Gaming Hub, then the graphic-communications building. (Groups A&B do this Thursday.)",
+          primer_full:`<p><b>The Creative School</b> is TMU's faculty for communication, media, and design, one of its largest divisions (about 9 schools and 27 programs), covering media production, journalism, the RTA School of Media, performance, fashion, image arts/photography, and graphic communications. It was the Faculty of Communication & Design (FCAD) until it rebranded as "The Creative School" in 2021.</p><p><b>Part 1, the Red Bull Gaming Hub (80 Gould St, in the Rogers Communications Centre).</b> An on-campus esports and gaming facility built around three things: <em>game design</em>, <em>virtual production</em>, and <em>esports broadcasting</em>. It has 36 high-performance PCs arranged in six team bays and uses tools like Unreal Engine and OBS; by day it's a classroom, by evening it's the training space for TMU's esports team and a livestream/tournament venue.</p><p><b>Part 2, the Heidelberg Centre (125 Bond St).</b> Home of TMU's <b>School of Graphic Communications Management (GCM)</b>, Canada's <em>only</em> degree program for the graphic-communications and printing industry. It blends design, technology, and business, students learn to design and produce printed materials, <b>packaging</b>, and physical media, with a built-in industry internship. (Packaging ties directly to your SHAD project on the lifecycle of everyday goods.)</p>` },
+        { display_time:"2:00 PM (C&D) / 4:30 PM (A&B)", kind:"workshop", title:"Introduction to Cybersecurity and Encryption", speaker:"Johnathan Spinelli", role:"Student Skills Facilitator, Dept. of Computer Science, TMU", location:"ENG 205",
+          speaker_gist:"A facilitator in TMU's Computer Science department (he runs their coding 'Debug Room'), here to show how encryption actually keeps data safe, with a hands-on coding activity.",
+          primer_gist:"How the padlock in your browser really works: the two families of encryption, why hashing is different, and the simple cipher you'll code yourself.",
+          primer_full:`<p>Encryption is scrambling a message so only the right person can unscramble it. There are two families, and modern security uses <b>both together</b>.</p><p><b>1. Symmetric encryption, one shared key.</b> The same secret key both locks and unlocks the message. It's <b>fast</b>, great for bulk data (the standard is <b>AES</b>). The catch: both people need the same key, so how do you share it securely in the first place?</p><p><b>2. Asymmetric (public-key) encryption, a key <em>pair</em>.</b> You have a <b>public key</b> you hand out freely and a <b>private key</b> you never share. Anyone can lock a message with your public key, but <em>only</em> your private key can unlock it, so no secret needs to be shared in advance. Run it the other way (sign with your private key, anyone verifies with your public one) and you get a <b>digital signature</b> that proves who sent it. The standard example is <b>RSA</b>. It's slower, so it's used sparingly.</p><p><b>How they combine, this is HTTPS.</b> When you see the padlock, your browser used slow <em>asymmetric</em> crypto <b>once</b> to safely agree on a shared key with the website, then switched to fast <em>symmetric</em> AES for the rest of the conversation. Best of both: secure key-sharing, then speed. That handshake is <b>TLS</b>.</p><p><b>Hashing is NOT encryption</b> (the most common beginner mix-up). A hash like <b>SHA-256</b> is a <b>one-way</b> function: it turns any input into a fixed-size fingerprint you <em>can't</em> reverse, and there's no key. It's for checking <em>integrity</em> (did this file change?) and storing passwords (a site should save the hash, not your actual password). Encryption you undo; hashing you don't.</p><p><b>Your hands-on: the Caesar cipher.</b> Shift every letter by a fixed amount, shift 3 turns A→D, B→E, so HELLO becomes KHOOR. The "key" is the shift number. Coding it is easy, and it's the perfect lesson in <em>why weak crypto fails</em>: there are only 25 possible shifts, so you can crack it by brute force or by spotting that E is the most common English letter. That's exactly why real ciphers need astronomically large key spaces.</p>`,
+          buildoff:"Ask why we can safely publish a 'public key' in the open. Once that clicks, the whole modern internet makes sense.",
+          questions:[
+            "How can a key be public and the system still be secure?",
+            "Why store a password's hash instead of the password, and why does that mean the site can't email you your old one?",
+            "The Caesar cipher has 25 keys. Roughly how many does a modern one have, and why does that size matter?"
+          ] },
+        { display_time:"7:00 PM", kind:"social", title:"PA Workshop: Dance", speaker:"Arianna Hyatt", location:"DCC 103/104",
+          primer_gist:"A peer-led dance workshop, learn a routine, move, no experience needed." },
+        { display_time:"8:30 PM", kind:"social", title:"PA Fashion Show", location:"On campus",
+          primer_gist:"The PAs put on a fashion show, expect a lot of personality on the runway. Come cheer." }
+      ]
+    },
+
+    /* ===================== WEDNESDAY, the heart + every program at TMU ===================== */
+    "2026-07-22": {
+      week: 3,
+      headline: "Inside a beating heart in the morning, then meet every program at TMU.",
+      pa_duty: { room_checks: [], off: [] },
+      sessions: [
+        { display_time:"9:00 AM", kind:"lecture", title:"Cardiac Surgery Lecture + Demo", speaker:"Dr. Paola", role:"Visiting cardiac surgeon", location:"DCC 350/352",
+          speaker_gist:"A visiting cardiac surgeon (only a first name was on the schedule) giving a lecture plus a live demonstration.",
+          primer_gist:"What heart surgery actually fixes, bypass and valves, and how surgeons stop the heart to work on it (with a live demo).",
+          primer_full:`<p>Cardiac surgery treats the plumbing and mechanics of the heart. Two operations dominate:</p><p><b>Coronary artery bypass (a "bypass" / CABG).</b> The heart feeds itself through coronary arteries; when they clog with plaque (<em>coronary artery disease</em>), the muscle starves, that's what causes many heart attacks. Surgeons take a healthy blood vessel from elsewhere in the body and graft it to route blood <em>around</em> the blockage, a detour.</p><p><b>Valve repair or replacement.</b> The heart's four valves are one-way doors keeping blood flowing forward. A valve can get too stiff (stenosis) or too leaky (regurgitation); surgeons repair it or swap in a mechanical or tissue valve.</p><p><b>The wild part, stopping the heart.</b> To sew on a still target, surgeons often stop the heart and hand its job to a <b>heart-lung machine</b> (cardiopulmonary bypass), which oxygenates the blood and pumps it around the body while the heart is quiet. When the repair's done, they restart it.</p><p><b>Where it's heading:</b> smaller incisions, <em>minimally invasive</em> and robot-assisted techniques, and catheter-based valve replacements that avoid opening the chest at all. Watch the <b>demo</b> for how surgeons handle tissue and tie sutures, the hand skills are a huge part of the craft.</p>`,
+          buildoff:"A demo is rare, watch the hands. Ask what separates a good technical surgeon from a great one; the answer is usually judgment, not speed.",
+          questions:[
+            "How do you decide to repair a valve versus replace it?",
+            "What's actually happening to the body while it's on the heart-lung machine?",
+            "How much of surgery is manual skill versus decision-making under pressure?"
+          ] },
+        { display_time:"2:00 PM", kind:"social", title:"Student Recruitment Mixer", role:"TMU Recruitment Team", location:"DCC 350/352",
+          primer_gist:"A fair-style mixer to talk one-on-one with people from TMU's programs and departments, use it to scout what university subjects actually feel like.",
+          primer_full:`<p>This is a low-pressure chance to interrogate real programs, not brochures. Come with a couple of questions ready so you don't just drift, e.g. "what does a first-year actually do day to day?", "what can I do with this degree?", "what surprised you about this program?". Given your interests, worth hunting down: <b>Engineering</b>, <b>Computer Science</b>, the <b>Faculty of Science</b>, and <b>The Creative School</b> (media/design). Treat it as free reconnaissance for your own university search.</p>` },
+        { display_time:"7:00 PM", kind:"social", title:"PA Workshop: Stock Market 101 — Trading Floor Challenge", speaker:"Rishaan Saluja", location:"DCC 350/352",
+          primer_gist:"A peer-led intro to how the stock market works, run as a trading-floor challenge. Ties nicely to your Economics background." }
+      ]
+    },
+
+    /* ===================== THURSDAY, Creative School, colour chemistry, carbon ===================== */
+    "2026-07-23": {
+      week: 3,
+      headline: "The Creative School, colour-chemistry, and capturing carbon.",
+      pa_duty: {
+        room_checks: [],
+        off: [ {pa:"Zoe", when:"all day"} ]
+      },
+      sessions: [
+        { display_time:"9:00 AM & 11:00 AM (Groups A&B)", kind:"field-trip", title:"Creative School Activation", role:"The Creative School, TMU", location:"RCC 359A (80 Gould St) → 125 Bond St (Heidelberg Centre)",
+          primer_gist:"Groups A&B's turn: a two-part morning inside The Creative School, TMU's media/design faculty, the gaming/media side, then graphic communications. (C&D did this Tuesday.)",
+          primer_full:`<p><b>The Creative School</b> is TMU's faculty for communication, media, and design, one of its largest divisions (roughly 9 schools, 27 programs): media production, journalism, the RTA School of Media, performance, fashion, image arts, and graphic communications. It was the Faculty of Communication & Design (FCAD) until rebranding in 2021.</p><p><b>Part 1</b> is in the Rogers Communications Centre (80 Gould St), TMU's media-production hub (the same building houses the Red Bull Gaming Hub, an esports/virtual-production/broadcasting facility). <b>Part 2</b> is the <b>Heidelberg Centre (125 Bond St)</b>, home of the <b>School of Graphic Communications Management (GCM)</b>, Canada's only degree program for the printing and graphic-communications industry, blending design, technology, and business, with a strong <b>packaging</b> stream that connects straight to your SHAD project on everyday goods.</p>` },
+        { display_time:"10:00 AM & 2:00 PM (Groups C&D)", kind:"workshop", title:"SciXchange Chemistry: the Mascot Mystery", speaker:"SciXchange", role:"TMU Faculty of Science outreach office", location:"On campus",
+          speaker_gist:"SciXchange, TMU's Faculty of Science outreach team, runs a chemistry whodunit for Groups C&D (A&B did it Tuesday).",
+          primer_gist:"Find an unknown chemical's concentration with spectroscopy and a calibration curve, measurement by light.",
+          primer_full:`<p>Same idea as the chemistry mystery earlier in the week: you find <b>how much</b> of a coloured chemical is present by shining light through it. The rule is <b>Beer–Lambert, A = ε l c</b>: absorbance (A) is proportional to concentration (c), because the substance's absorptivity (ε) and the sample width (l) are fixed.</p><p><b>The method:</b> measure a set of <em>known</em> standards, plot absorbance vs. concentration (a straight line through the origin), then measure your unknown and read its concentration straight off that line, i.e. c = A ÷ slope. It only stays linear while A is small (about A ≲ 1); very concentrated samples must be diluted back into range. Play with the widget to feel how an absorbance reading maps to a concentration.</p>`,
+          widget:"calibration-curve",
+          buildoff:"You never measure concentration directly, you infer it from light. Ask where else real testing works by proxy like this.",
+          questions:[
+            "Why must the calibration line go through the origin?",
+            "What do you do if the unknown reads above your highest standard?",
+            "Name one thing that could make identical solutions give different readings."
+          ] },
+        { display_time:"3:00 PM (A&B) / 4:00 PM (C&D)", kind:"workshop", title:"CO₂ Capture Workshop", speaker:"Nicola Kelly", role:"Communications & Outreach Officer, Chemical & Nanotechnology Engineering, University of Waterloo", location:"DCC 350/352",
+          speaker_gist:"A chemical/nanotech-engineering outreach officer from the University of Waterloo (a guest facilitator), on the chemistry of pulling CO₂ out of the air.",
+          primer_gist:"How chemistry and nanotech engineering actually capture carbon dioxide, the main methods and why it's hard.",
+          primer_full:`<p><b>Carbon capture</b> means grabbing CO₂ before (or after) it reaches the atmosphere and locking it away, one lever against climate change. The main approaches:</p><ul><li><b>Amine scrubbing (post-combustion).</b> The most established method: run smokestack gas through a liquid <em>amine</em> (like MEA) that chemically grabs CO₂. Then you <b>heat</b> the liquid to release the CO₂ as a pure stream and reuse the amine. The snag: that heating costs a lot of energy, the "energy penalty."</li><li><b>Solid sorbents (where nanotech comes in).</b> Materials with enormous internal surface area, like <b>MOFs</b> (metal–organic frameworks), act like molecular sponges: CO₂ sticks to their surfaces (adsorption). More surface per gram = more CO₂ captured, which is exactly what nanoscale engineering optimizes.</li><li><b>Membranes.</b> Thin films that let CO₂ pass through while blocking other gases, physically filtering it out.</li><li><b>Direct air capture (DAC).</b> The hardest version: pull CO₂ straight from ordinary air, where it's only ~0.04%, so you're sifting for a needle in a haystack.</li></ul><p>After capture, the CO₂ is either <b>stored</b> (pumped deep underground into rock) or <b>used</b> (turned into fuels, concrete, or chemicals). The engineering fight is always the same: capture enough CO₂ without spending so much energy that you emit more than you catch.</p>`,
+          buildoff:"Tie it to your project: capturing carbon is really about a product's whole lifecycle, emissions included. Ask whether capture is a real fix or a way to avoid emitting less.",
+          questions:[
+            "If capturing CO₂ takes energy, when does it actually come out ahead?",
+            "Why is pulling CO₂ from open air so much harder than from a smokestack?",
+            "Is carbon capture a genuine solution or a licence to keep emitting?"
+          ] },
+        { display_time:"7:00 PM", kind:"social", title:"PA Workshop: Feeding the Future", speaker:"Raquel Steele-Saunders", location:"DCC 350/352",
+          primer_gist:"A peer-led workshop on food and the future, sustainability, food security, or where our food comes from. Ties to your project's lifecycle theme." }
+      ]
+    },
+
+    /* ===================== FRIDAY, gold that isn't gold, then the ROM ===================== */
+    "2026-07-24": {
+      week: 3,
+      headline: "Gold that isn't gold-coloured, and an afternoon at the ROM.",
+      pa_duty: {
+        room_checks: [],
+        off: [ {pa:"Arianna", when:"all day"}, {pa:"Jacob", when:"all day"}, {pa:"Joella", when:"all day"} ]
+      },
+      sessions: [
+        { display_time:"9:00 AM (A&B) / 10:00 AM (C&D)", kind:"workshop", title:"Nanotechnology & Gold Nanoparticles Workshop", speaker:"Nicola Kelly", role:"Communications & Outreach Officer, Chemical & Nanotechnology Engineering, University of Waterloo", location:"DCC 350/352",
+          speaker_gist:"The same Waterloo nanotech-engineering outreach officer, now on how gold nanoparticles power the rapid tests in your medicine cabinet.",
+          primer_gist:"Why gold turns *red* at the nanoscale, and how that colour trick makes rapid diagnostic tests (like a COVID or pregnancy test) work.",
+          primer_full:`<p><b>Shrink gold small enough and it stops looking gold.</b> A chunk of gold is shiny yellow, but gold <b>nanoparticles</b> (roughly 10–40 nanometres, thousands of times thinner than a hair) look <b>ruby red</b> in solution. Why: at that size the metal's surface electrons slosh together and resonate with specific colours of light, an effect called <b>localized surface plasmon resonance</b>. The size and spacing of the particles set which colour you see.</p><p><b>The useful part, colour changes when they clump.</b> Spread apart, the particles are red; when they <b>clump together</b> (aggregate), the resonance shifts and the colour swings toward blue/grey. A colour change you can see with your eyes becomes a chemical signal, no instrument required.</p><p><b>How that builds a rapid test (lateral-flow assay).</b> This is the tech inside a home pregnancy or COVID antigen test:</p><ol><li>Gold nanoparticles are coated with <b>antibodies</b> that latch onto one specific target molecule (a virus protein, a hormone).</li><li>Your sample wicks along the strip, carrying the gold particles with it.</li><li>At the <b>test line</b>, a stripe of capture antibodies grabs any particle that caught the target, piling up enough red gold to form a <b>visible line</b>.</li></ol><p>A red line = target present. It's <b>cheap, fast, and needs no power or lab</b>, which is exactly why this nanoscale colour trick ended up in billions of point-of-care tests.</p>`,
+          buildoff:"You've almost certainly read one of these tests without knowing it was gold. Ask what <em>else</em> you could detect just by swapping which antibody rides the nanoparticle.",
+          questions:[
+            "Why does particle *size* change the colour you see?",
+            "How does the strip make sure a red line only appears when the target is really there?",
+            "What's the trade-off of a test that needs no instrument versus a full lab machine?"
+          ] },
+        { display_time:"2:00 PM", kind:"field-trip", title:"Royal Ontario Museum (ROM)", location:"100 Queen's Park, Toronto",
+          primer_gist:"The ROM, Canada's largest museum, spanning natural history and world cultures: dinosaurs, minerals, mummies, and galleries from around the globe, behind Daniel Libeskind's jutting-crystal facade.",
+          primer_full:`<p>The <b>Royal Ontario Museum</b> is one of North America's largest museums, mixing <em>natural history</em> (dinosaur skeletons, a bat cave, gems and meteorites) with <em>world cultures</em> (Egyptian mummies, Chinese and Indigenous galleries, arms and armour). Its dramatic angular entrance, the aluminium-and-glass <b>Michael Lee-Chin Crystal</b> (architect Daniel Libeskind, 2007), erupts out of the original 1914 building. It's big, pick two or three galleries and go deep rather than skimming everything.</p>` },
+        { display_time:"7:00 PM", kind:"social", title:"SHAD Time", location:"On campus",
+          primer_gist:"Open house time, project work, downtime, or hanging out with your group. Use it however you need to." }
+      ]
+    },
+
+    /* ===================== SATURDAY, Kensington, the CN Tower, Bob Ross ===================== */
+    "2026-07-25": {
+      week: 3,
+      headline: "Kensington Market, the CN Tower, and a Bob Ross paint-along night.",
+      pa_duty: {
+        room_checks: [],
+        off: [ {pa:"Raquel", when:"all day"}, {pa:"Daniel", when:"all day"}, {pa:"Niksha", when:"all day"} ]
+      },
+      sessions: [
+        { display_time:"12:00 PM", kind:"field-trip", title:"Kensington Market", location:"Kensington Market, Toronto",
+          primer_gist:"A downtown afternoon in Kensington Market, a bohemian, multicultural neighbourhood (and National Historic Site) of vintage shops, murals, and food from every corner of the world. Come hungry.",
+          primer_full:`<p><b>Kensington Market</b> is one of Toronto's most distinctive neighbourhoods, a dense, walkable maze of vintage-clothing stores, indie shops, street art, and food from Latin America, the Caribbean, East Asia, the Middle East, and beyond. It's a designated <b>National Historic Site</b> for its layered immigrant history, and it's best explored on foot with no fixed plan.</p>` },
+        { display_time:"3:00 PM", kind:"field-trip", title:"Toronto Day — CN Tower & the waterfront", location:"Downtown Toronto",
+          primer_gist:"The big Toronto tourist day: the CN Tower, the historic railroads at Roundhouse Park below it, and a photo at the Toronto sign.",
+          primer_full:`<p><b>CN Tower.</b> Toronto's icon, <b>553 metres</b> tall, it was the world's tallest free-standing structure for over 30 years (1975–2007). The LookOut and glass floor put the city under your feet; the daredevil <em>EdgeWalk</em> circles the outside of the pod (not on today's menu, but worth seeing).</p><p><b>The railroads.</b> At the tower's base, <b>Roundhouse Park</b> preserves a historic steam-locomotive roundhouse and the Toronto Railway Museum, a nod to the rail yards this whole district grew from.</p><p><b>The Toronto sign.</b> The big illuminated <b>TORONTO</b> sign sits in Nathan Phillips Square in front of City Hall, the classic group-photo stop.</p>` },
+        { display_time:"7:30 PM", kind:"social", title:"Bob Ross Paint Night", location:"On campus",
+          primer_gist:"A Bob Ross-style guided painting night, follow along, make some 'happy little trees', no skill required." }
+      ]
+    },
+
+    /* ===================== SUNDAY, the island and a mural ===================== */
+    "2026-07-26": {
+      week: 3,
+      headline: "A ferry to the Islands, then a mural to close the week.",
+      pa_duty: { room_checks: [], off: [] },
+      sessions: [
+        { display_time:"9:30 AM", kind:"field-trip", title:"Centre Island", location:"Toronto Islands",
+          primer_gist:"A ferry ride across the harbour to the Toronto Islands, car-free parkland, beaches, boardwalks, and the best skyline view of the city. Bring sunscreen.",
+          primer_full:`<p><b>Centre Island</b> is the middle of the Toronto Islands, a chain of car-free islands a short <b>ferry</b> ride across the harbour from downtown. Expect parkland, beaches, bike paths, the Centreville amusement area, and the postcard <b>skyline view</b> looking back at the city. A relaxed outdoor day, dress for sun and a bit of a breeze off the lake.</p>` },
+        { display_time:"7:00 PM", kind:"social", title:"TMU Mural", location:"On campus",
+          primer_gist:"A collaborative mural activity to cap the week, make something together as a group. (TMU's campus is home to 'Landscapes of Us', a large Indigenous mural on Kerr Hall, if you want to go see the real thing.)" },
+        { display_time:"8:30 PM", kind:"social", title:"SHAD Time", location:"On campus",
+          primer_gist:"Wind-down house time to close out week three, rest up, the last stretch is coming." }
       ]
     }
 
